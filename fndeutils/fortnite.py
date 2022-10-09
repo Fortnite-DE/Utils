@@ -42,4 +42,4 @@ FORTNITE_API_ICON_LINK = 'https://fortnite-api.com/assets/img/logo_small_128.png
 
 
 def get_fortnite_api_icon_link():
-    return f'FORTNITE_API_ICON_LINK{datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()}'
+    return f'{FORTNITE_API_ICON_LINK}{datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()}'
