@@ -31,12 +31,12 @@ SEASON_COLOR = 0x6c128e
 SEASON_GRADIENT = [0x6c128e, 0x932d9b]
 SEASON_START = datetime.fromtimestamp(1663459201)
 SEASON_START_OFFSET = timedelta(hours=12)
-SEASON_END = datetime.fromtimestamp(1670058000)
+SEASON_END = datetime.fromtimestamp(1670101500)
 ARENA_SEASON_START = datetime.fromtimestamp(1663459201)
 LAST_SEASON_START = datetime.fromtimestamp(1654387201)
 LAST_ARENA_SEASON_START = datetime.fromtimestamp(1655805600)
 
-EVENT_START = datetime.fromtimestamp(1670058300)
+EVENT_START = datetime.fromtimestamp(1670101500)
 
 FORTNITE_API_ICON_LINK = 'https://fortnite-api.com/assets/img/logo_small_128.png?t='
 
