@@ -36,7 +36,7 @@ ARENA_SEASON_START = datetime.fromtimestamp(1663459201)
 LAST_SEASON_START = datetime.fromtimestamp(1654387201)
 LAST_ARENA_SEASON_START = datetime.fromtimestamp(1655805600)
 
-EVENT_START = None
+EVENT_START = datetime.fromtimestamp(1670058300)
 
 FORTNITE_API_ICON_LINK = 'https://fortnite-api.com/assets/img/logo_small_128.png?t='
 
