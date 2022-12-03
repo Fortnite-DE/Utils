@@ -24,7 +24,7 @@ SEASONS = {
     20: [3, 2],
     21: [3, 3],
     22: [3, 4],
-    23: [3, 5],
+    23: [4, 1],
 }
 SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/22BR_C3S4_EGS_StoreArt_Blade_1200x1600_1200x1600-0f4096bc5da796d51594e14f3e340eac'
 SEASON_COLOR = 0x6c128e
@@ -36,7 +36,7 @@ ARENA_SEASON_START = datetime.fromtimestamp(1663459201)
 LAST_SEASON_START = datetime.fromtimestamp(1654387201)
 LAST_ARENA_SEASON_START = datetime.fromtimestamp(1655805600)
 
-EVENT_START = datetime.fromtimestamp(1670101500)
+EVENT_START = None
 
 FORTNITE_API_ICON_LINK = 'https://fortnite-api.com/assets/img/logo_small_128.png?t='
 
