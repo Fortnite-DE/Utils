@@ -27,13 +27,13 @@ SEASONS = {
     23: [4, 1],
     24: [4, 2],
 }
-SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/22BR_C3S4_EGS_StoreArt_Blade_1200x1600_1200x1600-0f4096bc5da796d51594e14f3e340eac'
+SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/23BR_C4S1_EGS_Launcher_Blade_1200x1600_1200x1600-708ad0c7e0813b60cb2fda3e24e39401'
 SEASON_COLOR = 0x0d42b9
-SEASON_GRADIENT = [0x6c128e, 0x932d9b]
+SEASON_GRADIENT = [0xae76ff, 0xa7ef96]
 SEASON_START = datetime.fromtimestamp(1670112001)
 SEASON_START_OFFSET = timedelta(hours=12)
 SEASON_END = datetime.fromtimestamp(1678521600)
-ARENA_SEASON_START = datetime.fromtimestamp(1663459201)
+ARENA_SEASON_START = datetime.fromtimestamp(1670112001)
 LAST_SEASON_START = datetime.fromtimestamp(1663459201)
 LAST_ARENA_SEASON_START = datetime.fromtimestamp(1663459201)
 
