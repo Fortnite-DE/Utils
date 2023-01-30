@@ -17,6 +17,6 @@ def create_rounded_rectangle_mask(size, radius, alpha=255):
     image = Image.new('RGBA', (size[0] * factor, size[1] * factor), (0, 0, 0, 0))
     draw = ImageDraw.Draw(image)
     draw.rounded_rectangle((0, 0, size[0] * factor, size[1] * factor), radius=radius, fill=(255, 255, 255, alpha))
-    image = image.resize(size, Image.ANTIALIAS)
+    image = image.resize(size, Image.LANCZOS)
 
     return image
