@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-SEASON = 23
+SEASON = 24
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
@@ -26,16 +26,17 @@ SEASONS = {
     22: [3, 4],
     23: [4, 1],
     24: [4, 2],
+    25: [4, 3],
 }
-SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/23BR_C4S1_EGS_Launcher_Blade_1200x1600_1200x1600-708ad0c7e0813b60cb2fda3e24e39401'
-SEASON_COLOR = 0x0d42b9
-SEASON_GRADIENT = [0x0d42b9, 0x19147d]
-SEASON_START = datetime.fromtimestamp(1670112001)
+SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/24BR_S24_EGS_Launcher_Blade_1200x1600_1200x1600-0f74a2c818a2b043fa684875eca49784'
+SEASON_COLOR = 0x7700f0
+SEASON_GRADIENT = [0x00c2ff, 0xeb5ed8]
+SEASON_START = datetime.fromtimestamp(1678406400)
 SEASON_START_OFFSET = timedelta(hours=12)
-SEASON_END = datetime.fromtimestamp(1678431600)
-ARENA_SEASON_START = datetime.fromtimestamp(1670112001)
-LAST_SEASON_START = datetime.fromtimestamp(1663459201)
-LAST_ARENA_SEASON_START = datetime.fromtimestamp(1663459201)
+SEASON_END = datetime.fromtimestamp(1685858400)
+ARENA_SEASON_START = datetime.fromtimestamp(1678406400)
+LAST_SEASON_START = datetime.fromtimestamp(1670112001)
+LAST_ARENA_SEASON_START = datetime.fromtimestamp(1670112001)
 
 EVENT_START = None
 
