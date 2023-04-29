@@ -1,3 +1,8 @@
+from typing import List
+
+import discord
+
+
 class PaginationView(discord.ui.View):
     def __init__(self, embeds: List[discord.Embed], start_page: int = 0, **kwargs):
         super(PaginationView, self).__init__(**kwargs)
@@ -6,14 +11,14 @@ class PaginationView(discord.ui.View):
 
     @classmethod
     async def start(
-        cls,
-        interaction: discord.Interaction,
-        embeds: List[discord.Embed],
-        *,
-        start_page: int = 0,
-        edit: bool = False,
-        ephemeral: bool = False,
-        **kwargs,
+            cls,
+            interaction: discord.Interaction,
+            embeds: List[discord.Embed],
+            *,
+            start_page: int = 0,
+            edit: bool = False,
+            ephemeral: bool = False,
+            **kwargs,
     ):
         if len(embeds) == 0:
             raise ValueError("No embeds provided")
@@ -41,7 +46,7 @@ class PaginationView(discord.ui.View):
 
     @discord.ui.button(emoji="⏮️")
     async def first_page(
-        self, button: discord.ui.Button, interaction: discord.Interaction
+            self, button: discord.ui.Button, interaction: discord.Interaction
     ):
         self.current_page = 0
         self._update_buttons()
@@ -51,7 +56,7 @@ class PaginationView(discord.ui.View):
 
     @discord.ui.button(emoji="⬅️")
     async def prev_page(
-        self, button: discord.ui.Button, interaction: discord.Interaction
+            self, button: discord.ui.Button, interaction: discord.Interaction
     ):
         self.current_page -= 1
         self._update_buttons()
@@ -61,7 +66,7 @@ class PaginationView(discord.ui.View):
 
     @discord.ui.button(emoji="➡️")
     async def next_page(
-        self, button: discord.ui.Button, interaction: discord.Interaction
+            self, button: discord.ui.Button, interaction: discord.Interaction
     ):
         self.current_page += 1
         self._update_buttons()
@@ -71,7 +76,7 @@ class PaginationView(discord.ui.View):
 
     @discord.ui.button(emoji="⏭️")
     async def last_page(
-        self, button: discord.ui.Button, interaction: discord.Interaction
+            self, button: discord.ui.Button, interaction: discord.Interaction
     ):
         self.current_page = len(self.embeds) - 1
         self._update_buttons()
