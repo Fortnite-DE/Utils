@@ -1,9 +1,22 @@
-from typing import List
+from typing import List, Any, Optional
 
 import discord
+from discord.ext import commands
 
 
-class PaginationView(discord.ui.View):
+class View(discord.ui.View):
+
+    async def on_error(
+            self,
+            interaction: discord.Interaction[commands.Bot],
+            error: Exception,
+            item: discord.ui.Item[Any],
+            /
+    ) -> None:
+        interaction.client.dispatch('error', 'on_view_interaction', self, item, interaction, error=error)
+
+
+class PaginationView(View):
     def __init__(self, embeds: List[discord.Embed], start_page: int = 0, **kwargs):
         super(PaginationView, self).__init__(**kwargs)
         self.embeds: List[discord.Embed] = embeds
