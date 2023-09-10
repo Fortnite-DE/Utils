@@ -13,6 +13,7 @@ requires-python = ">=3.11"
 dependencies = [
     "Red-DiscordBot>=3.5.0",
     "fortnitepy",
+    "fortnite-api",
     "pillow",
     "pytz"
 ]
