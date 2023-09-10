@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 from typing import Callable
 
 from discord import app_commands
@@ -23,8 +25,10 @@ def get_game_language() -> GameLanguage:
     return gl
 
 
-def create_locale_str_factory(cog: str, file: str) -> Callable[[str], app_commands.locale_str]:
+def create_locale_str_factory(
+    name: str, file_location: str | Path | os.PathLike
+) -> Callable[[str], app_commands.locale_str]:
     def _locale_str(untranslated: str) -> app_commands.locale_str:
-        return app_commands.locale_str(untranslated, extras={'cog': cog, 'file': file})
+        return app_commands.locale_str(untranslated, name=name, file_location=file_location)
 
     return _locale_str
