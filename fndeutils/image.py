@@ -21,6 +21,6 @@ def create_rounded_rectangle_mask(size, radius, alpha=255):
         radius=radius,
         fill=(255, 255, 255, alpha),
     )
-    image = image.resize(size, Image.ANTIALIAS)
+    image = image.resize(size, Image.LANCZOS)
 
     return image
