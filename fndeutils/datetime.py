@@ -1,6 +1,8 @@
-from datetime import datetime, time
+from datetime import datetime, time, timedelta
 
 import pytz
+from babel.dates import format_timedelta
+from redbot.core.i18n import get_babel_locale
 
 
 def to_utc_datetime(local_dt: datetime, timezone: str) -> datetime:
@@ -15,3 +17,32 @@ def to_utc_time(local_t: time, timezone: str) -> time:
     local_dt = datetime.combine(datetime.now().date(), local_t)
     dt_utc = to_utc_datetime(local_dt, timezone)
     return dt_utc.time()
+
+
+def humanize_timedelta(timedelta_: timedelta, include_time: bool = False, format_: str = 'long'):
+    seconds = abs(timedelta_.total_seconds())
+    periods = [
+        ('days', 60 * 60 * 24 * 365, lambda x: x * 365),
+        ('days', 60 * 60 * 24 * 30, lambda x: x * 30),
+        ('days', 60 * 60 * 24, lambda x: x),
+    ]
+    time_periods = [('hours', 60 * 60, lambda x: x), ('minutes', 60, lambda x: x)]
+
+    if include_time or timedelta_.days == 0:
+        periods += time_periods
+
+    strings = []
+    for period_name, period_seconds, format_func in periods:
+        if seconds >= period_seconds:
+            period_value, seconds = divmod(seconds, period_seconds)
+            if period_value == 0:
+                continue
+            strings.append(
+                format_timedelta(
+                    timedelta(**{period_name: format_func(period_value)}),
+                    threshold=1,
+                    format=format_,
+                    locale=get_babel_locale(),
+                )
+            )
+    return ' '.join(strings)
