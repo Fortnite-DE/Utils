@@ -1,3 +1,6 @@
+from typing import Callable
+
+from discord import app_commands
 from fortnite_api import GameLanguage
 from redbot.core.i18n import get_locale
 
@@ -18,3 +21,10 @@ def get_game_language() -> GameLanguage:
         except ValueError:
             gl = GameLanguage.ENGLISH
     return gl
+
+
+def create_locale_str_factory(cog: str, file: str) -> Callable[[str], app_commands.locale_str]:
+    def _locale_str(untranslated: str) -> app_commands.locale_str:
+        return app_commands.locale_str(untranslated, extras={'cog': cog, 'file': file})
+
+    return _locale_str
