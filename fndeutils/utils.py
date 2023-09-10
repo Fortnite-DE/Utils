@@ -8,7 +8,7 @@ def unpack_error(e: Exception) -> Exception:
     return e
 
 
-def get_game_locale() -> GameLanguage:
+def get_game_language() -> GameLanguage:
     code = get_locale()
     try:
         gl = GameLanguage(code)
