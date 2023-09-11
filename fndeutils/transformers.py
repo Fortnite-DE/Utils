@@ -14,14 +14,10 @@ if TYPE_CHECKING:
     from redbot.core.bot import Red
 
 
-class EmojiTransformer(app_commands.Transformer):
+class CustomEmojiTransformer(app_commands.Transformer):
     async def transform(self, interaction: discord.Interaction["Red"], value: str, /) -> discord.PartialEmoji:
         ctx = commands.Context.from_interaction(interaction)
-        try:
-            emoji = await commands.PartialEmojiConverter().convert(ctx, value)
-        except commands.PartialEmojiConversionFailure:
-            # We assume it's an unicode emoji however, we don't verify it.
-            emoji = discord.PartialEmoji(name=value, animated=False)
+        emoji = await commands.PartialEmojiConverter().convert(ctx, value)
         return emoji
 
 
