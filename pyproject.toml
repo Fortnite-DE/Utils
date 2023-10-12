@@ -1,3 +1,7 @@
+[tool.black]
+line-length = 120
+skip-string-normalization = true
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -5,8 +9,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "fndeutils"
 version = "0.0.2"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = [
-    "pillow"
+    "Red-DiscordBot>=3.5.0",
+    "fortnitepy",
+    "fortnite-api",
+    "pillow",
+    "pytz"
 ]
 
