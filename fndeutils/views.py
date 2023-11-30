@@ -1,4 +1,4 @@
-from typing import List, Any, Optional, Union, TYPE_CHECKING
+from typing import List, Any, Optional, TYPE_CHECKING
 
 import discord
 from redbot.core.i18n import Translator
@@ -15,7 +15,7 @@ class View(discord.ui.View):
         interaction: Optional[discord.Interaction] = None,
         *,
         owner_only: bool = True,
-        timeout: float = 300.0,
+        timeout: Optional[float] = 300.0,
     ):
         super().__init__(timeout=timeout)
         self.interaction: Optional[discord.Interaction] = interaction
