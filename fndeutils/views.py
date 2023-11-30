@@ -1,13 +1,45 @@
-from typing import List, Any
+from typing import List, Any, Optional, Union, TYPE_CHECKING
 
 import discord
-from discord.ext import commands
+from redbot.core.i18n import Translator
+
+if TYPE_CHECKING:
+    from redbot.core.bot import Red
+
+_ = Translator('fndeutils', __file__)
 
 
 class View(discord.ui.View):
+    def __init__(
+        self,
+        interaction: Optional[discord.Interaction] = None,
+        *,
+        author_only: bool = True,
+        timeout: float = 300.0,
+    ):
+        super().__init__(timeout=timeout)
+        self.interaction: Optional[discord.Interaction] = interaction
+        self.author_only: bool = author_only
+
+    async def on_timeout(self) -> None:
+        if not self.interaction:
+            return
+        for item in self.children:
+            if item.is_dispatchable():
+                self.remove_item(item)
+        await self.interaction.edit_original_response(view=self)
+
+    async def interaction_check(self, interaction: discord.Interaction["Red"], /) -> bool:
+        if self.author_only and self.interaction and interaction.user != self.interaction.user:
+            embed = discord.Embed(colour=discord.Colour.dark_red())
+            embed.description = _('You are not authorized to interact with this menu.')
+            await interaction.response.send_message(embed=embed, ephemeral=True)
+            return False
+        return True
+
     async def on_error(
         self,
-        interaction: discord.Interaction[commands.Bot],
+        interaction: discord.Interaction["Red"],
         error: Exception,
         item: discord.ui.Item[Any],
         /,
