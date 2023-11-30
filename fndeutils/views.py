@@ -6,7 +6,7 @@ from redbot.core.i18n import Translator
 if TYPE_CHECKING:
     from redbot.core.bot import Red
 
-_ = Translator('fndeutils', __file__)
+_ = Translator('FndeUtils', __file__)
 
 
 class View(discord.ui.View):
