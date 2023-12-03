@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
 
-SEASON = 27
+SEASON = 28
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
@@ -30,14 +30,15 @@ SEASONS = {
     26: [4, 4],
     27: [4, 5],
     28: [5, 0],
+    29: [5, 1],
 }
-SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/Blade_1200x1600_1200x1600-de4202a7550ef7b96b7ad2eb566ae275'
-SEASON_COLOR = 0x46B0E3
-SEASON_GRADIENT = [0x46B0E3, 0xA3DBFF]
-SEASON_START = datetime.fromtimestamp(1698969600, tz=timezone.utc)
-SEASON_START_OFFSET = timedelta(hours=13)
-SEASON_END = datetime.fromtimestamp(1701576900, tz=timezone.utc)
-LAST_SEASON_START = datetime.fromtimestamp(1692921600, tz=timezone.utc)
+SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/Blade_1200x1600_1200x1600-fcea56f5eb92df731a89121e2b4416b5'
+SEASON_COLOR = 0xe5b302
+SEASON_GRADIENT = [0xf5e50d, 0xad8d03]
+SEASON_START = datetime.fromtimestamp(1701576000, tz=timezone.utc)
+SEASON_START_OFFSET = timedelta(hours=8)
+SEASON_END = datetime.fromtimestamp(1709881200, tz=timezone.utc)
+LAST_SEASON_START = datetime.fromtimestamp(1698969600, tz=timezone.utc)
 
 EVENT_START = None
 
