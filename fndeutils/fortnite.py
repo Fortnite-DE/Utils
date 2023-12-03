@@ -29,8 +29,7 @@ SEASONS = {
     25: [4, 3],
     26: [4, 4],
     27: [4, 5],
-    28: [5, 0],
-    29: [5, 1],
+    28: [5, 1],
 }
 SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/Blade_1200x1600_1200x1600-fcea56f5eb92df731a89121e2b4416b5'
 SEASON_COLOR = 0xE5B302
