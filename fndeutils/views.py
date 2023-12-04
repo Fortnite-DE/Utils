@@ -18,11 +18,12 @@ class View(discord.ui.View):
         timeout: Optional[float] = 300.0,
     ):
         super().__init__(timeout=timeout)
+        self._enabled: bool = interaction is not None
         self.interaction: Optional[discord.Interaction] = interaction
         self.owner_only: bool = owner_only
 
     async def on_timeout(self) -> None:
-        if not self.interaction:
+        if not self.interaction or not self._enabled:
             return
         for item in self.children:
             if item.is_dispatchable():
@@ -30,7 +31,7 @@ class View(discord.ui.View):
         await self.interaction.edit_original_response(view=self)
 
     async def interaction_check(self, interaction: discord.Interaction["Red"], /) -> bool:
-        if self.owner_only and self.interaction and interaction.user != self.interaction.user:
+        if self._enabled and self.owner_only and self.interaction and interaction.user != self.interaction.user:
             embed = discord.Embed(colour=discord.Colour.dark_red())
             embed.description = _('You are not authorized to interact with this menu.')
             await interaction.response.send_message(embed=embed, ephemeral=True)
