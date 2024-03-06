@@ -97,7 +97,7 @@ class PaginationView(View):
         await interaction.response.edit_message(embed=self.embeds[self.current_page], view=self)
 
     @discord.ui.button(emoji='⬅️')
-    async def prev_page(self, button: interaction: discord.Interaction, button: discord.ui.Button):
+    async def prev_page(self, interaction: interaction: discord.Interaction, button: discord.ui.Button):
         self.current_page -= 1
         self._update_buttons()
         await interaction.response.edit_message(embed=self.embeds[self.current_page], view=self)
