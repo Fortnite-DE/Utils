@@ -91,25 +91,25 @@ class PaginationView(View):
         return view
 
     @discord.ui.button(emoji='⏮️')
-    async def first_page(self, button: discord.ui.Button, interaction: discord.Interaction):
+    async def first_page(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.current_page = 0
         self._update_buttons()
         await interaction.response.edit_message(embed=self.embeds[self.current_page], view=self)
 
     @discord.ui.button(emoji='⬅️')
-    async def prev_page(self, button: discord.ui.Button, interaction: discord.Interaction):
+    async def prev_page(self, button: interaction: discord.Interaction, button: discord.ui.Button):
         self.current_page -= 1
         self._update_buttons()
         await interaction.response.edit_message(embed=self.embeds[self.current_page], view=self)
 
     @discord.ui.button(emoji='➡️')
-    async def next_page(self, button: discord.ui.Button, interaction: discord.Interaction):
+    async def next_page(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.current_page += 1
         self._update_buttons()
         await interaction.response.edit_message(embed=self.embeds[self.current_page], view=self)
 
     @discord.ui.button(emoji='⏭️')
-    async def last_page(self, button: discord.ui.Button, interaction: discord.Interaction):
+    async def last_page(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.current_page = len(self.embeds) - 1
         self._update_buttons()
         await interaction.response.edit_message(embed=self.embeds[self.current_page], view=self)
