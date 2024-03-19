@@ -14,7 +14,7 @@ class View(discord.ui.View):
         self,
         interaction: Optional[discord.Interaction] = None,
         *,
-        owner: Optional[discord.User] = None,
+        owner: Optional[discord.abc.User] = None,
         owner_only: bool = True,
         timeout: Optional[float] = 300.0,
     ):
