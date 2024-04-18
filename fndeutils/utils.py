@@ -1,7 +1,8 @@
 import os
 from pathlib import Path
 from typing import Callable, TYPE_CHECKING
-
+import asyncio
+import discord
 from discord import app_commands
 from fortnite_api import GameLanguage
 from redbot.core.i18n import get_locale
@@ -48,3 +49,31 @@ async def get_command_mention(bot: "Red", name: str) -> str:
             continue
         return f'</{name}:{command_id}>'
     return f'`/{name}`'
+
+
+async def defer_interaction(interaction: discord.Interaction):
+    await asyncio.sleep(
+        2 - (discord.utils.utcnow() - interaction.created_at).total_seconds()
+    )
+    if not interaction.response.is_done():
+        await interaction.response.defer()
+
+
+async def send_respond(interaction: discord.Interaction, **kwargs):
+    if not interaction.response.is_done():
+        try:
+            return await interaction.response.send_message(**kwargs)
+        except discord.HTTPException as e:
+            if e.code != 40060:
+                raise e
+    await interaction.followup.send(**kwargs)
+
+
+async def edit_respond(interaction: discord.Interaction, **kwargs):
+    if not interaction.response.is_done():
+        try:
+            return await interaction.response.edit_message(**kwargs)
+        except discord.HTTPException as e:
+            if e.code != 40060:
+                raise e
+    await interaction.edit_original_response(**kwargs)
