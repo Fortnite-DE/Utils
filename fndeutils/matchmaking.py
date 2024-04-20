@@ -17,3 +17,42 @@ KICK_FACTOR = 4.0
 REPORT_FACTOR = 2.5
 JOIN_DATE_FACTOR = 1.0
 FEEDBACK_FACTOR = 0.5
+
+DIVISIONS = {
+    0: "Bronze I",
+    1: "Bronze II",
+    2: "Bronze III",
+    3: "Silber I",
+    4: "Silber II",
+    5: "Silber III",
+    6: "Gold I",
+    7: "Gold II",
+    8: "Gold III",
+    9: "Platin I",
+    10: "Platin II",
+    11: "Platin III",
+    12: "Diamant I",
+    13: "Diamant II",
+    14: "Diamant III",
+    15: "Elite",
+    16: "Champion",
+    17: "Unreal",
+    18: "Unranked",
+}
+
+PLAYLIST_TYPES = {
+    "Battle Royale": 0,
+    "Battle Royale (no build)": 1,
+    "Kreativmodus": 2,
+    "UEFN": 3,
+    "LEGO Fortnite": 4,
+    "Rocket Racing": 5,
+    "Fortnite Festival": 6,
+    "Rette die Welt": 7,
+}
+
+RANKED_PLAYLIST_TYPES = {
+    "ranked-br": 0,
+    "ranked-zb": 1,
+    "delmar-competitive": 5,
+}
