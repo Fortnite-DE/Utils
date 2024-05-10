@@ -1,4 +1,5 @@
 import discord
+from typing import Optional
 
 
 TIME_AFTER_BAN = 7 * 24 * 60 * 60  # 7 Tage
