@@ -16,7 +16,7 @@ def generate_google_form_link(ban_entry: Optional[discord.BanEntry] = None) -> s
 
     reason = None
     if ban_entry.reason:
-        reason_match = re.search(r"Reason: (.+)|Grund: (.+)", ban_entry.reason)
+        reason_match = re.search(r"(?:Grund|Reason): (.+)", ban_entry.reason)
         reason = reason_match.group(1) if reason_match else ban_entry.reason
 
     return (
