@@ -52,9 +52,7 @@ async def get_command_mention(bot: "Red", name: str) -> str:
 
 
 async def defer_interaction(interaction: discord.Interaction):
-    await asyncio.sleep(
-        2 - (discord.utils.utcnow() - interaction.created_at).total_seconds()
-    )
+    await asyncio.sleep(2 - (discord.utils.utcnow() - interaction.created_at).total_seconds())
     if not interaction.response.is_done():
         await interaction.response.defer()
 
