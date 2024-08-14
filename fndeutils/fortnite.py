@@ -39,7 +39,7 @@ SEASON_COLOR = 0xF85238
 SEASON_GRADIENT = [0xF85238, 0xFC783A]
 SEASON_START = datetime.fromtimestamp(1716530400, tz=timezone.utc)
 SEASON_START_OFFSET = timedelta(hours=5)
-SEASON_END = datetime.fromtimestamp(1723788000, tz=timezone.utc)
+SEASON_END = datetime.fromtimestamp(1723777200, tz=timezone.utc)
 LAST_SEASON_START = datetime.fromtimestamp(1709856000, tz=timezone.utc)
 
 EVENT_START = None
