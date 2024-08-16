@@ -36,8 +36,8 @@ SEASONS = {
     32: [5, 5],
 }
 SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/Blade_1200x1600_1200x1600-fcea56f5eb92df731a89121e2b4416b5'
-SEASON_COLOR = 0x2A4487
-SEASON_GRADIENT = [0x071120, 0x2A4487]
+SEASON_COLOR = 0x101732
+SEASON_GRADIENT = [0x101831, 0x2d447a]
 SEASON_START = datetime.fromtimestamp(1723777200, tz=timezone.utc)
 SEASON_START_OFFSET = timedelta(hours=5)
 SEASON_END = datetime.fromtimestamp(1730527200, tz=timezone.utc)
