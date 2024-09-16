@@ -51,6 +51,9 @@ PLAYLIST_TYPES = {
     "Rocket Racing": 5,
     "Fortnite Festival": 6,
     "Rette die Welt": 7,
+    "Reload": 8,
+    "Reload (no build)": 9,
+    "LTM": 10,
 }
 
 RANKED_PLAYLIST_TYPES = {
