@@ -45,15 +45,15 @@ DIVISIONS = {
 PLAYLIST_TYPES = {
     "Battle Royale": 0,
     "Battle Royale (no build)": 1,
-    "Kreativmodus": 2,
-    "UEFN": 3,
-    "LEGO Fortnite": 4,
-    "Rocket Racing": 5,
-    "Fortnite Festival": 6,
-    "Rette die Welt": 7,
-    "Reload": 8,
-    "Reload (no build)": 9,
-    "LTM": 10,
+    "Reload": 2,
+    "Reload (no build)": 3,
+    "LTM": 4,
+    "Kreativmodus": 5,
+    "UEFN": 6,
+    "LEGO Fortnite": 7,
+    "Rocket Racing": 8,
+    "Fortnite Festival": 9,
+    "Rette die Welt": 10,
 }
 
 RANKED_PLAYLIST_TYPES = {
