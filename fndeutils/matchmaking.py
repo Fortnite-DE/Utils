@@ -59,5 +59,7 @@ PLAYLIST_TYPES = {
 RANKED_PLAYLIST_TYPES = {
     "ranked-br": 0,
     "ranked-zb": 1,
-    "delmar-competitive": 5,
+    "ranked_blastberry_build": 2,
+    "ranked_blastberry_nobuild": 3,
+    "delmar-competitive": 8,
 }
