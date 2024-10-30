@@ -43,7 +43,7 @@ SEASON_START_OFFSET = timedelta(hours=5)
 SEASON_END = datetime.fromtimestamp(1730527200, tz=timezone.utc)
 LAST_SEASON_START = datetime.fromtimestamp(1716530400, tz=timezone.utc)
 
-EVENT_START = None
+EVENT_START = datetime.fromtimestamp(1730500200, tz=timezone.utc)
 
 FORTNITE_API_ICON_LINK = 'https://fortnite-api.com/assets/img/logo_small_128.png?t='
 
