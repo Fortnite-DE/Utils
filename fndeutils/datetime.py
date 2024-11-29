@@ -21,12 +21,18 @@ def to_utc_time(local_t: time, timezone: str) -> time:
 
 def humanize_timedelta(timedelta_: timedelta, include_time: bool = False, format_: str = 'long'):
     seconds = abs(timedelta_.total_seconds())
+    
     periods = [
-        ('days', 60 * 60 * 24 * 365, lambda x: x * 365),
-        ('days', 60 * 60 * 24 * 30, lambda x: x * 30),
+        ('years', 60 * 60 * 24 * 365, lambda x: x),
+        ('months', 60 * 60 * 24 * 30, lambda x: x),
+        ('weeks', 60 * 60 * 24 * 7, lambda x: x),
         ('days', 60 * 60 * 24, lambda x: x),
     ]
-    time_periods = [('hours', 60 * 60, lambda x: x), ('minutes', 60, lambda x: x)]
+
+    time_periods = [
+        ('hours', 60 * 60, lambda x: x),
+        ('minutes', 60, lambda x: x),
+    ]
 
     if include_time or timedelta_.days == 0:
         periods += time_periods
@@ -42,7 +48,7 @@ def humanize_timedelta(timedelta_: timedelta, include_time: bool = False, format
                     timedelta(**{period_name: format_func(period_value)}),
                     threshold=1,
                     format=format_,
-                    locale=get_babel_locale(),
+                    locale="de_DE",
                 )
             )
     return ' '.join(strings)
