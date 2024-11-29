@@ -35,6 +35,7 @@ SEASONS = {
     31: [5, 4],
     32: [5, 5],
     33: [6, 1],
+    34: [6, 2],
 }
 
 SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/Blade_1200x1600_1200x1600-fcea56f5eb92df731a89121e2b4416b5'
@@ -45,7 +46,7 @@ SEASON_START_OFFSET = timedelta(hours=5)
 SEASON_END = datetime.fromtimestamp(1733036400, tz=timezone.utc)
 LAST_SEASON_START = datetime.fromtimestamp(1723777200, tz=timezone.utc)
 
-EVENT_START = None
+EVENT_START = datetime.fromtimestamp(1732993200, tz=timezone.utc)
 
 FORTNITE_API_ICON_LINK = 'https://fortnite-api.com/assets/img/logo_small_128.png?t='
 
