@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
 
-SEASON = 32
+SEASON = 33
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
