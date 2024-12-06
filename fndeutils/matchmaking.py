@@ -58,6 +58,8 @@ PLAYLIST_TYPES = {
     "Rette die Welt": 12,
 }
 
+PLAYLIST_ORDER = [[7, 12], [9, 10, 11]]
+
 RANKED_PLAYLIST_TYPES = {
     "ranked-br": 0,
     "ranked-zb": 1,
