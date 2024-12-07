@@ -56,6 +56,7 @@ PLAYLIST_TYPES = {
     "Rocket Racing": 10,
     "Fortnite Festival": 11,
     "Rette die Welt": 12,
+    "Ballistic": 13,
 }
 
 PLAYLIST_ORDER = [[7, 12], [9, 10, 11]]
