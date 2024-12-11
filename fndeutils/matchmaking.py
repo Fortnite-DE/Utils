@@ -67,4 +67,5 @@ RANKED_PLAYLIST_TYPES = {
     "ranked_blastberry_build": 4,
     "ranked_blastberry_nobuild": 5,
     "delmar-competitive": 10,
+    "ranked-feral": 13
 }
