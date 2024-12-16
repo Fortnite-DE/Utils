@@ -65,7 +65,7 @@ RANKED_PLAYLIST_TYPES = {
     "ranked-br": 0,
     "ranked-zb": 1,
     "ranked-figment-build": 2,
-    "ranked-figment-nobuild" 3,
+    "ranked-figment-nobuild": 3,
     "ranked_blastberry_build": 4,
     "ranked_blastberry_nobuild": 5,
     "delmar-competitive": 10,
