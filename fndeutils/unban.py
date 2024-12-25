@@ -1,7 +1,7 @@
-import discord
 import re
 from typing import Optional
 
+import discord
 
 TIME_AFTER_BAN = 7 * 24 * 60 * 60  # 7 Tage
 TIME_AFTER_TRY = 180 * 24 * 60 * 60  # 180 Tage

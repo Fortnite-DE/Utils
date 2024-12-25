@@ -1,4 +1,4 @@
-from typing import List, Any, Optional, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, List, Optional
 
 import discord
 from redbot.core.i18n import Translator

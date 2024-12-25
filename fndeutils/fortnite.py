@@ -39,8 +39,8 @@ SEASONS = {
 }
 
 SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/FNBR_33-00_C6S1_EGS_Launcher_KeyArt_Blade_1200x1600_1200x1600-70912f1f443af800d0fb55cff7ee5da7'
-SEASON_COLOR = 0x391bed
-SEASON_GRADIENT = [0x8b1ef6, 0x020951]
+SEASON_COLOR = 0x391BED
+SEASON_GRADIENT = [0x8B1EF6, 0x020951]
 SEASON_START = datetime.fromtimestamp(1733022000, tz=timezone.utc)
 SEASON_START_OFFSET = timedelta(hours=6.5)
 SEASON_END = datetime.fromtimestamp(1740132000, tz=timezone.utc)

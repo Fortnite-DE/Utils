@@ -1,7 +1,8 @@
+import asyncio
 import os
 from pathlib import Path
-from typing import Callable, TYPE_CHECKING
-import asyncio
+from typing import TYPE_CHECKING, Callable
+
 import discord
 from discord import app_commands
 from fortnite_api import GameLanguage
