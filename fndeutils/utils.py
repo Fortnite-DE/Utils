@@ -38,19 +38,6 @@ def create_locale_str_factory(
     return _locale_str
 
 
-async def get_command_mention(bot: "Red", name: str) -> str:
-    name = name.lower()
-    name_split = name.split(' ')
-    if not name_split:
-        return f'`/{name}`'
-    commands = await bot.list_enabled_app_commands()
-    for command_name, command_id in commands['slash'].items():
-        if command_name != name_split[0]:
-            continue
-        return f'</{name}:{command_id}>'
-    return f'`/{name}`'
-
-
 async def defer_interaction(interaction: discord.Interaction):
     await asyncio.sleep(2 - (discord.utils.utcnow() - interaction.created_at).total_seconds())
     if not interaction.response.is_done():
