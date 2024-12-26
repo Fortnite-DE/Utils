@@ -49,9 +49,9 @@ SEASONS = {
     34: [6, 2],
 }
 
-SEASON_COVER_URL = 'https://cdn1.epicgames.com/offer/fn/FNBR_33-00_C6S1_EGS_Launcher_KeyArt_Blade_1200x1600_1200x1600-70912f1f443af800d0fb55cff7ee5da7'
-SEASON_COLOR = 0x391bed
-SEASON_GRADIENT = [0x8b1ef6, 0x020951]
+SEASON_COVER_URL = 'https://cdn2.unrealengine.com/fnbr-33-00-c6s1-discoverplaylist-tiles-br-1920x1080v2-1920x1080-3f75c79fb1f4.jpg?resize=1&w=2560'
+SEASON_COLOR = 0xd4073f
+SEASON_GRADIENT = [0xFFA515, 0xF3DB24]
 SEASON_START = datetime.fromtimestamp(1733022000, tz=timezone.utc)
 SEASON_START_OFFSET = timedelta(hours=6.5)
 SEASON_END = datetime.fromtimestamp(1740132000, tz=timezone.utc)
@@ -89,8 +89,8 @@ FESTIVAL_ARTISTS = {
 }
 
 FESTIVAL_SEASON_COVER_URL = 'https://cdn2.unrealengine.com/de-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-9faef70179d3.jpg?resize=1&w=2560'
-FESTIVAL_SEASON_COLOR = 0xf09efe
-FESTIVAL_SEASON_GRADIENT = [0xeadc8c, 0xa77711]
+FESTIVAL_SEASON_COLOR = 0xc241e0
+FESTIVAL_SEASON_GRADIENT = [0xAE2FD0, 0xE864FF]
 FESTIVAL_SEASON_START = datetime(2024, 11, 2, 14, tzinfo=timezone.utc)
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
 FESTIVAL_SEASON_END = datetime(2025, 1, 14, 14, tzinfo=timezone.utc)
