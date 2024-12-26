@@ -51,7 +51,7 @@ SEASONS = {
 
 SEASON_COVER_URL = 'https://cdn2.unrealengine.com/fnbr-33-00-c6s1-discoverplaylist-tiles-br-1920x1080v2-1920x1080-3f75c79fb1f4.jpg?resize=1&w=2560'
 SEASON_COLOR = 0xd4073f
-SEASON_GRADIENT = [0xFFA515, 0xF3DB24]
+SEASON_GRADIENT = [0xCA0146, 0xF93263]
 SEASON_START = datetime.fromtimestamp(1733022000, tz=timezone.utc)
 SEASON_START_OFFSET = timedelta(hours=6.5)
 SEASON_END = datetime.fromtimestamp(1740132000, tz=timezone.utc)
@@ -67,7 +67,7 @@ OG_SEASONS = SEASONS
 
 OG_SEASON_COVER_URL = 'https://cdn2.unrealengine.com/de-fn33-00-c1s1-discover-playlist-tiles-og-1920x1080-1920x1080-2a20f7eb1c14.jpg?resize=1&w=2560'
 OG_SEASON_COLOR = 0x545a42
-OG_SEASON_GRADIENT = [0xfdf465, 0xf3c516]
+OG_SEASON_GRADIENT = [0xFFA515, 0xF3DB24]
 OG_SEASON_START = datetime.fromtimestamp(1733821200, tz=timezone.utc)
 OG_SEASON_START_OFFSET = timedelta(hours=0)
 OG_SEASON_END = datetime.fromtimestamp(1741680000, tz=timezone.utc)
