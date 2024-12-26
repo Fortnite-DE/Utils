@@ -93,6 +93,6 @@ FESTIVAL_SEASON_COLOR = 0xf09efe
 FESTIVAL_SEASON_GRADIENT = [0xeadc8c, 0xa77711]
 FESTIVAL_SEASON_START = datetime(2024, 11, 2, 14, tzinfo=timezone.utc)
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
-FESTIVAL_SEASON_END = datetime(2025, )
+FESTIVAL_SEASON_END = datetime(2025, 1, 14, 14, tzinfo=timezone.utc)
 
 FESTIVAL_EVENT_START = None
