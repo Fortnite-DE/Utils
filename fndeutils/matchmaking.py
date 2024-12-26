@@ -45,21 +45,29 @@ DIVISIONS = {
 PLAYLIST_TYPES = {
     "Battle Royale": 0,
     "Battle Royale (no build)": 1,
-    "Reload": 2,
-    "Reload (no build)": 3,
-    "LTM": 4,
-    "Kreativmodus": 5,
-    "UEFN": 6,
-    "LEGO Fortnite": 7,
-    "Rocket Racing": 8,
-    "Fortnite Festival": 9,
-    "Rette die Welt": 10,
+    "OG Battle Royale": 2,
+    "OG Battle Royale (no build)": 3,
+    "Reload": 4,
+    "Reload (no build)": 5,
+    "LTM": 6,
+    "Kreativmodus": 7,
+    "UEFN": 8,
+    "LEGO Fortnite": 9,
+    "Rocket Racing": 10,
+    "Fortnite Festival": 11,
+    "Rette die Welt": 12,
+    "Ballistic": 13,
 }
+
+PLAYLIST_ORDER = [[7, 12], [9, 10, 11]]
 
 RANKED_PLAYLIST_TYPES = {
     "ranked-br": 0,
     "ranked-zb": 1,
-    "ranked_blastberry_build": 2,
-    "ranked_blastberry_nobuild": 3,
-    "delmar-competitive": 8,
+    "ranked-figment-build": 2,
+    "ranked-figment-nobuild": 3,
+    "ranked_blastberry_build": 4,
+    "ranked_blastberry_nobuild": 5,
+    "delmar-competitive": 10,
+    "ranked-feral": 13
 }
