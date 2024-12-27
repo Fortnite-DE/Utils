@@ -1,6 +1,6 @@
 import asyncio
 from contextlib import suppress
-from typing import List, TYPE_CHECKING
+from typing import TYPE_CHECKING, List
 
 import async_timeout
 import discord
@@ -8,7 +8,7 @@ import fortnitepy
 from discord import app_commands
 from redbot.core import commands
 
-from .errors import InvalidPlayerName, BotMissingCog
+from .errors import BotMissingCog, InvalidPlayerName
 
 if TYPE_CHECKING:
     from redbot.core.bot import Red

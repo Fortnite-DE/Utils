@@ -22,9 +22,9 @@ def to_utc_time(local_t: time, timezone: str) -> time:
 def humanize_timedelta(timedelta_: timedelta, include_time: bool = False, format_: str = 'long'):
     seconds = abs(timedelta_.total_seconds())
     periods = [
-        ('days', 60 * 60 * 24 * 365, lambda x: x*365), # years
-        ('days', 60 * 60 * 24 * 30, lambda x: x*30), # months
-        ('days', 60 * 60 * 24 * 7, lambda x: x*7), # weeks
+        ('days', 60 * 60 * 24 * 365, lambda x: x * 365),  # years
+        ('days', 60 * 60 * 24 * 30, lambda x: x * 30),  # months
+        ('days', 60 * 60 * 24 * 7, lambda x: x * 7),  # weeks
         ('days', 60 * 60 * 24, lambda x: x),
     ]
 
