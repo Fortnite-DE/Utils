@@ -70,7 +70,7 @@ OG_SEASON_COLOR = 0x545a42
 OG_SEASON_GRADIENT = [0xFFA515, 0xF3DB24]
 OG_SEASON_START = datetime.fromtimestamp(1733821200, tz=timezone.utc)
 OG_SEASON_START_OFFSET = timedelta(hours=0)
-OG_SEASON_END = datetime.fromtimestamp(1741680000, tz=timezone.utc)
+OG_SEASON_END = datetime(2025, 1, 31, 10, 0, tzinfo=timezone.utc)
 
 OG_EVENT_START = None
 
@@ -93,6 +93,6 @@ FESTIVAL_SEASON_COLOR = 0xc241e0
 FESTIVAL_SEASON_GRADIENT = [0xAE2FD0, 0xE864FF]
 FESTIVAL_SEASON_START = datetime(2024, 11, 2, 14, tzinfo=timezone.utc)
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
-FESTIVAL_SEASON_END = datetime(2025, 1, 14, 14, tzinfo=timezone.utc)
+FESTIVAL_SEASON_END = datetime(2025, 1, 14, 10, tzinfo=timezone.utc)
 
 FESTIVAL_EVENT_START = None
