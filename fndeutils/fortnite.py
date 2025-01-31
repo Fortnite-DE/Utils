@@ -62,15 +62,15 @@ EVENT_START = None
 ############## Fortnite OG ##############
 #########################################
 
-OG_SEASON = 1
+OG_SEASON = 2
 OG_SEASONS = SEASONS
 
-OG_SEASON_COVER_URL = 'https://cdn2.unrealengine.com/de-fn33-00-c1s1-discover-playlist-tiles-og-1920x1080-1920x1080-2a20f7eb1c14.jpg?resize=1&w=2560'
+OG_SEASON_COVER_URL = 'https://cdn2.unrealengine.com/de-fn33-00-c1s1-discover-playlist-tiles-og-1920x1080-1920x1080-9c81a114f52d.jpg?resize=1&w=1600'
 OG_SEASON_COLOR = 0x545A42
 OG_SEASON_GRADIENT = [0xFFA515, 0xF3DB24]
-OG_SEASON_START = datetime.fromtimestamp(1733821200, tz=timezone.utc)
+OG_SEASON_START = datetime.fromtimestamp(1738314000, tz=timezone.utc)
 OG_SEASON_START_OFFSET = timedelta(hours=0)
-OG_SEASON_END = datetime(2025, 1, 31, 10, 0, tzinfo=timezone.utc)
+OG_SEASON_END = datetime.fromtimestamp(1742893200, tz=timezone.utc)
 
 OG_EVENT_START = None
 
