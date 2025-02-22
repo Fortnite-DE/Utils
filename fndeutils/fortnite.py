@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 FORTNITE_API_ICON_LINK = 'https://fortnite-api.com/assets/img/logo_small_128.png?t='
 
@@ -11,7 +12,7 @@ def get_fortnite_api_icon_link():
 ############# Battle Royale #############
 #########################################
 
-SEASON = 33
+SEASON = 34
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
@@ -49,12 +50,11 @@ SEASONS = {
     34: [6, 2],
 }
 
-SEASON_COVER_URL = 'https://cdn2.unrealengine.com/fnbr-33-00-c6s1-discoverplaylist-tiles-br-1920x1080v2-1920x1080-3f75c79fb1f4.jpg?resize=1&w=2560'
-SEASON_COLOR = 0xD4073F
-SEASON_GRADIENT = [0xCA0146, 0xF93263]
-SEASON_START = datetime.fromtimestamp(1733022000, tz=timezone.utc)
-SEASON_START_OFFSET = timedelta(hours=6.5)
-SEASON_END = datetime.fromtimestamp(1740132000, tz=timezone.utc)
+SEASON_COVER_URL = 'https://cdn2.unrealengine.com/fnbr-34-00-c6s2-discover-playlist-tiles-keyart-1920x1080-1920x1080-6877a7dfe21c.jpg?resize=1&w=2560'
+SEASON_COLOR = 0x735c75
+SEASON_GRADIENT = [0x9C7650, 0x4A4397]
+SEASON_START = datetime(day=21, month=2, year=2025, hour=13, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 
 EVENT_START = None
 
