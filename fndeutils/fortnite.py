@@ -54,6 +54,7 @@ SEASON_COVER_URL = 'https://cdn2.unrealengine.com/fnbr-34-00-c6s2-discover-playl
 SEASON_COLOR = 0x735c75
 SEASON_GRADIENT = [0x9C7650, 0x4A4397]
 SEASON_START = datetime(day=21, month=2, year=2025, hour=13, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_START_OFFSET = timedelta(hours=0)
 SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 
 EVENT_START = None
