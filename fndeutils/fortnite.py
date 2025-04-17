@@ -79,7 +79,7 @@ OG_EVENT_START = None
 ############### Festival ###############
 ########################################
 
-FESTIVAL_SEASON = 7
+FESTIVAL_SEASON = 8
 FESTIVAL_ARTISTS = {
     1: "The Weeknd",
     2: "Lady Gaga",
@@ -87,14 +87,34 @@ FESTIVAL_ARTISTS = {
     4: "Metallica",
     5: "Karol G",
     6: "Snoop Dogg",
-    7: "Hatsune Miku"
+    7: "Hatsune Miku",
+    8: "Sabrina Carpenter"
 }
 
-FESTIVAL_SEASON_COVER_URL = 'https://cdn2.unrealengine.com/de-fnsp-07-discoverytile-mainstage-1920x1080-1920x1080-f838ca292932.jpg?resize=1&w=1600'
-FESTIVAL_SEASON_COLOR = 0x33c9f0
-FESTIVAL_SEASON_GRADIENT = [0x2b72b3, 0x8fe9fd]
-FESTIVAL_SEASON_START = datetime(2025, 1, 14, 11, tzinfo=timezone.utc)
+FESTIVAL_SEASON_COVER_URL = 'https://cdn2.unrealengine.com/de-fnsp-08-discoverytile-mainstage-1920x1080-1920x1080-f02b954abedb.jpg?resize=1&w=1600'
+FESTIVAL_SEASON_COLOR = 0xdfc47a
+FESTIVAL_SEASON_GRADIENT = [0xDDBC55, 0xE6D8D6]
+FESTIVAL_SEASON_START = datetime(day=8, month=4, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
-FESTIVAL_SEASON_END = datetime(2025, 4, 8, 8, 30, tzinfo=timezone.utc)
+FESTIVAL_SEASON_END = datetime(day=17, month=6, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
 
 FESTIVAL_EVENT_START = None
+
+########################################
+################# LEGO #################
+########################################
+
+LEGO_SEASON = 5
+LEGO_PASSES = {
+    5: "Goldrausch-Galerie",
+}
+
+LEGO_SEASON_COVER_URL = 'https://cdn2.unrealengine.com/fortnite-rebel-oro-lego-style-thumbnail-576x576-768a2b70edd5.jpg?resize=1&w=2560'
+LEGO_SEASON_COLOR = 0xed8109
+LEGO_SEASON_GRADIENT = [0x321B0E, 0xAD2223]
+LEGO_SEASON_START = datetime(day=11, month=3, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+LEGO_SEASON_START_OFFSET = timedelta(hours=0)
+LEGO_SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+
+
+LEGO_EVENT_START = None
