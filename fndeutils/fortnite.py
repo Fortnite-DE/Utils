@@ -48,14 +48,15 @@ SEASONS = {
     32: "Kapitel 2: Remix",
     33: [6, 1],
     34: [6, 2],
+    35: "GALACTIC BATTLE"
 }
 
-SEASON_COVER_URL = 'https://cdn2.unrealengine.com/fnbr-34-00-c6s2-discover-playlist-tiles-keyart-1920x1080-1920x1080-6877a7dfe21c.jpg?resize=1&w=2560'
-SEASON_COLOR = 0x735c75
-SEASON_GRADIENT = [0x9C7650, 0x4A4397]
-SEASON_START = datetime(day=21, month=2, year=2025, hour=13, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_COVER_URL = 'https://fortnite.gg/img/seasons/bg/35.jpg'
+SEASON_COLOR = 0x8F5780
+SEASON_GRADIENT = [0xD4302B, 0x4281E0]
+SEASON_START = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 SEASON_START_OFFSET = timedelta(hours=0)
-SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_END = datetime(day=7, month=6, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 
 EVENT_START = None
 
