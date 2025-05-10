@@ -12,7 +12,7 @@ def get_fortnite_api_icon_link():
 ############# Battle Royale #############
 #########################################
 
-SEASON = 34
+SEASON = 35
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
