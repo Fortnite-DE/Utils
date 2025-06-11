@@ -73,9 +73,9 @@ OG_SEASONS = SEASONS
 OG_SEASON_COVER_URL = "https://cdn2.unrealengine.com/de-fnfig-36-00-c1s4-egs-launcher-keyart-og-blade-2560x1440-2560x1440-de33b6b4d50b.jpg"
 OG_SEASON_COLOR = 0xB161C0
 OG_SEASON_GRADIENT = [0x42E1F6, 0xD3FEFB]
-SEASON_START = datetime(day=7, month=6, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
-SEASON_START_OFFSET = timedelta(hours=0)
-SEASON_END = datetime(day=8, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_START = datetime(day=7, month=6, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_START_OFFSET = timedelta(hours=0)
+OG_SEASON_END = datetime(day=8, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 
 OG_EVENT_START = None
 
