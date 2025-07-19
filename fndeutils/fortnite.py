@@ -59,7 +59,7 @@ SEASON_COLOR = 0xCF0C10
 SEASON_GRADIENT = [0xA2C2C1, 0xFEFEFC]
 SEASON_START = datetime(day=7, month=6, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 SEASON_START_OFFSET = timedelta(hours=0)
-SEASON_END = datetime(day=8, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_END = datetime(day=7, month=8, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
 
 EVENT_START = None
 
@@ -75,7 +75,7 @@ OG_SEASON_COLOR = 0xB161C0
 OG_SEASON_GRADIENT = [0x42E1F6, 0xD3FEFB]
 OG_SEASON_START = datetime(day=7, month=6, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 OG_SEASON_START_OFFSET = timedelta(hours=0)
-OG_SEASON_END = datetime(day=8, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_END = datetime(day=7, month=8, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
 
 OG_EVENT_START = None
 
@@ -83,7 +83,7 @@ OG_EVENT_START = None
 ############### Festival ###############
 ########################################
 
-FESTIVAL_SEASON = 8
+FESTIVAL_SEASON = 9
 FESTIVAL_ARTISTS = {
     1: "The Weeknd",
     2: "Lady Gaga",
@@ -93,14 +93,15 @@ FESTIVAL_ARTISTS = {
     6: "Snoop Dogg",
     7: "Hatsune Miku",
     8: "Sabrina Carpenter",
+    9: "Bruno Mars",
 }
 
-FESTIVAL_SEASON_COVER_URL = "https://cdn2.unrealengine.com/de-fnsp-08-discoverytile-mainstage-1920x1080-1920x1080-f02b954abedb.jpg?resize=1&w=1600"
-FESTIVAL_SEASON_COLOR = 0xDFC47A
-FESTIVAL_SEASON_GRADIENT = [0xDDBC55, 0xE6D8D6]
-FESTIVAL_SEASON_START = datetime(day=8, month=4, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+FESTIVAL_SEASON_COVER_URL = "https://cdn2.unrealengine.com/de-fnsp-09-dryerase-discoverplaylisttile-1920x1080-1920x1080-b32681cd6a90.jpg?resize=1&w=2560"
+FESTIVAL_SEASON_COLOR = 0x78E142
+FESTIVAL_SEASON_GRADIENT = [0x3BCE1E, 0xFFDB10]
+FESTIVAL_SEASON_START = datetime(day=17, month=6, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
-FESTIVAL_SEASON_END = datetime(day=17, month=6, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+FESTIVAL_SEASON_END = datetime(day=26, month=8, year=2025, hour=9, minute=30, tzinfo=timezone.utc)
 
 FESTIVAL_EVENT_START = None
 
