@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 class CustomEmojiTransformer(app_commands.Transformer):
     async def transform(self, interaction: discord.Interaction["Red"], value: str, /) -> discord.PartialEmoji:
-        ctx = commands.Context.from_interaction(interaction)
+        ctx = await commands.Context.from_interaction(interaction)
         emoji = await commands.PartialEmojiConverter().convert(ctx, value)
         return emoji
 
