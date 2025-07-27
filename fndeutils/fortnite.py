@@ -1,17 +1,18 @@
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
-FORTNITE_API_ICON_LINK = 'https://fortnite-api.com/assets/img/logo_small_128.png?t='
+FORTNITE_API_ICON_LINK = "https://fortnite-api.com/assets/img/logo_small_128.png?t="
 
 
 def get_fortnite_api_icon_link():
-    return f'{FORTNITE_API_ICON_LINK}{datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()}'
+    return f"{FORTNITE_API_ICON_LINK}{datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()}"
 
 
 #########################################
 ############# Battle Royale #############
 #########################################
 
-SEASON = 33
+SEASON = 36
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
@@ -47,14 +48,18 @@ SEASONS = {
     32: "Kapitel 2: Remix",
     33: [6, 1],
     34: [6, 2],
+    35: "GALACTIC BATTLE",
+    36: [6, 3],
 }
 
-SEASON_COVER_URL = 'https://cdn2.unrealengine.com/fnbr-33-00-c6s1-discoverplaylist-tiles-br-1920x1080v2-1920x1080-3f75c79fb1f4.jpg?resize=1&w=2560'
-SEASON_COLOR = 0xD4073F
-SEASON_GRADIENT = [0xCA0146, 0xF93263]
-SEASON_START = datetime.fromtimestamp(1733022000, tz=timezone.utc)
-SEASON_START_OFFSET = timedelta(hours=6.5)
-SEASON_END = datetime.fromtimestamp(1740132000, tz=timezone.utc)
+SEASON_COVER_URL = (
+    "https://cdn2.unrealengine.com/fnbr-36-00-c6s3-sonylauncher-coverart-3840x2160-logo-3840x2160-ed23e7986f8a.jpg"
+)
+SEASON_COLOR = 0xCF0C10
+SEASON_GRADIENT = [0xA2C2C1, 0xFEFEFC]
+SEASON_START = datetime(day=7, month=6, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_START_OFFSET = timedelta(hours=0)
+SEASON_END = datetime(day=7, month=8, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
 
 EVENT_START = None
 
@@ -62,15 +67,15 @@ EVENT_START = None
 ############## Fortnite OG ##############
 #########################################
 
-OG_SEASON = 1
+OG_SEASON = 4
 OG_SEASONS = SEASONS
 
-OG_SEASON_COVER_URL = 'https://cdn2.unrealengine.com/de-fn33-00-c1s1-discover-playlist-tiles-og-1920x1080-1920x1080-2a20f7eb1c14.jpg?resize=1&w=2560'
-OG_SEASON_COLOR = 0x545A42
-OG_SEASON_GRADIENT = [0xFFA515, 0xF3DB24]
-OG_SEASON_START = datetime.fromtimestamp(1733821200, tz=timezone.utc)
+OG_SEASON_COVER_URL = "https://cdn2.unrealengine.com/de-fnfig-36-00-c1s4-egs-launcher-keyart-og-blade-2560x1440-2560x1440-de33b6b4d50b.jpg"
+OG_SEASON_COLOR = 0xB161C0
+OG_SEASON_GRADIENT = [0x42E1F6, 0xD3FEFB]
+OG_SEASON_START = datetime(day=7, month=6, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 OG_SEASON_START_OFFSET = timedelta(hours=0)
-OG_SEASON_END = datetime.fromtimestamp(1741680000, tz=timezone.utc)
+OG_SEASON_END = datetime(day=7, month=8, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
 
 OG_EVENT_START = None
 
@@ -78,7 +83,7 @@ OG_EVENT_START = None
 ############### Festival ###############
 ########################################
 
-FESTIVAL_SEASON = 6
+FESTIVAL_SEASON = 9
 FESTIVAL_ARTISTS = {
     1: "The Weeknd",
     2: "Lady Gaga",
@@ -86,13 +91,37 @@ FESTIVAL_ARTISTS = {
     4: "Metallica",
     5: "Karol G",
     6: "Snoop Dogg",
+    7: "Hatsune Miku",
+    8: "Sabrina Carpenter",
+    9: "Bruno Mars",
 }
 
-FESTIVAL_SEASON_COVER_URL = 'https://cdn2.unrealengine.com/de-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-9faef70179d3.jpg?resize=1&w=2560'
-FESTIVAL_SEASON_COLOR = 0xC241E0
-FESTIVAL_SEASON_GRADIENT = [0xAE2FD0, 0xE864FF]
-FESTIVAL_SEASON_START = datetime(2024, 11, 2, 14, tzinfo=timezone.utc)
+FESTIVAL_SEASON_COVER_URL = "https://cdn2.unrealengine.com/de-fnsp-09-dryerase-discoverplaylisttile-1920x1080-1920x1080-b32681cd6a90.jpg?resize=1&w=2560"
+FESTIVAL_SEASON_COLOR = 0x78E142
+FESTIVAL_SEASON_GRADIENT = [0x3BCE1E, 0xFFDB10]
+FESTIVAL_SEASON_START = datetime(day=17, month=6, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
-FESTIVAL_SEASON_END = datetime(2025, 1, 14, 14, tzinfo=timezone.utc)
+FESTIVAL_SEASON_END = datetime(day=26, month=8, year=2025, hour=9, minute=30, tzinfo=timezone.utc)
 
 FESTIVAL_EVENT_START = None
+
+########################################
+################# LEGO #################
+########################################
+
+LEGO_SEASON = 5
+LEGO_PASSES = {
+    5: "Goldrausch-Galerie",
+}
+
+LEGO_SEASON_COVER_URL = (
+    "https://cdn2.unrealengine.com/fortnite-rebel-oro-lego-style-thumbnail-576x576-768a2b70edd5.jpg?resize=1&w=2560"
+)
+LEGO_SEASON_COLOR = 0xED8109
+LEGO_SEASON_GRADIENT = [0x321B0E, 0xAD2223]
+LEGO_SEASON_START = datetime(day=11, month=3, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+LEGO_SEASON_START_OFFSET = timedelta(hours=0)
+LEGO_SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+
+
+LEGO_EVENT_START = None
