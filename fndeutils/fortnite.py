@@ -12,7 +12,7 @@ def get_fortnite_api_icon_link():
 ############# Battle Royale #############
 #########################################
 
-SEASON = 36
+SEASON = 37
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
@@ -50,16 +50,16 @@ SEASONS = {
     34: [6, 2],
     35: "GALACTIC BATTLE",
     36: [6, 3],
+    37: [6, 4],
+    38: [6, 5],
 }
 
-SEASON_COVER_URL = (
-    "https://cdn2.unrealengine.com/fnbr-36-00-c6s3-sonylauncher-coverart-3840x2160-logo-3840x2160-ed23e7986f8a.jpg"
-)
-SEASON_COLOR = 0xCF0C10
-SEASON_GRADIENT = [0xA2C2C1, 0xFEFEFC]
-SEASON_START = datetime(day=7, month=6, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_37-00_C6S4_EGS_Launcher_KeyArt_FNLogo_Blade_1200x1600_1200x1600-0924136c90b79f9006796f69f24a07f6"
+SEASON_COLOR = 0xFFA635
+SEASON_GRADIENT = [0xB4B5B7, 0x424145]
+SEASON_START = datetime(day=7, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 SEASON_START_OFFSET = timedelta(hours=0)
-SEASON_END = datetime(day=7, month=8, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_END = datetime(day=1, month=11, year=2025, hour=10, minute=00, tzinfo=ZoneInfo("Europe/Berlin"))
 
 EVENT_START = None
 
@@ -67,15 +67,15 @@ EVENT_START = None
 ############## Fortnite OG ##############
 #########################################
 
-OG_SEASON = 4
+OG_SEASON = 5
 OG_SEASONS = SEASONS
 
-OG_SEASON_COVER_URL = "https://cdn2.unrealengine.com/de-fnfig-36-00-c1s4-egs-launcher-keyart-og-blade-2560x1440-2560x1440-de33b6b4d50b.jpg"
-OG_SEASON_COLOR = 0xB161C0
-OG_SEASON_GRADIENT = [0x42E1F6, 0xD3FEFB]
-OG_SEASON_START = datetime(day=7, month=6, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/DE_FNFigment_37-00_C1S5_EGS_Launcher_KeyArt_Blade_1200x1600_1200x1600-c121e3c3d7a4236f0901934dd2200b76"
+OG_SEASON_COLOR = 0xE259AD
+OG_SEASON_GRADIENT = [0xCD0D3C, 0x37277F]
+OG_SEASON_START = datetime(day=7, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 OG_SEASON_START_OFFSET = timedelta(hours=0)
-OG_SEASON_END = datetime(day=7, month=8, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_END = datetime(day=3, month=10, year=2025, hour=10, minute=00, tzinfo=ZoneInfo("Europe/Berlin"))
 
 OG_EVENT_START = None
 
