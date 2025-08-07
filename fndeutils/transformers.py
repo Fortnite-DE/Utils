@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 class CustomEmojiTransformer(app_commands.Transformer):
     async def transform(self, interaction: discord.Interaction["Red"], value: str, /) -> discord.PartialEmoji:
-        ctx = commands.Context.from_interaction(interaction)
+        ctx = await commands.Context.from_interaction(interaction)
         emoji = await commands.PartialEmojiConverter().convert(ctx, value)
         return emoji
 
@@ -29,13 +29,14 @@ class PlayerTransformer(app_commands.Transformer):
         self, interaction: discord.Interaction["Red"], current: str
     ) -> List[app_commands.Choice]:
         epic_cog = interaction.client.get_cog('Epic')
-        if not epic_cog or len(epic_cog.clients) == 0:
+        clients: List[fortnitepy.Client] = getattr(epic_cog, 'clients', [])
+        if not epic_cog or len(clients) == 0:
             return [app_commands.Choice(name=current, value=current)]
 
-        client = epic_cog.clients[0]
+        client = clients[0]
 
         options = []
-        if client.is_display_name(current):
+        if fortnitepy.utils.is_display_name(current):
             players = None
             with suppress(asyncio.TimeoutError):
                 async with async_timeout.timeout(2.5):
@@ -43,17 +44,14 @@ class PlayerTransformer(app_commands.Transformer):
             if players is None:
                 return [app_commands.Choice(name=current, value=current)]
             options = self.fmt_options(current, players)
-        elif client.is_id(current):
+        elif fortnitepy.utils.is_id(current):
             player = await client.fetch_user(current)
             if player:
                 options.append(app_commands.Choice(name=str(player), value=player.id))
         return options
 
-    def fmt_options(
-        self,
-        current: str,
-        players: List[fortnitepy.User],
-    ) -> List[app_commands.Choice]:
+    @staticmethod
+    def fmt_options(current: str, players: List[fortnitepy.User]) -> List[app_commands.Choice]:
         options = []
         for player in players:
             displayed_name = str(player)
@@ -75,18 +73,19 @@ class PlayerTransformer(app_commands.Transformer):
 
     async def transform(self, interaction: discord.Interaction["Red"], value: str) -> fortnitepy.User:
         epic_cog = interaction.client.get_cog('Epic')
-        if not epic_cog or len(epic_cog.clients) == 0:
+        clients: List[fortnitepy.Client] = getattr(epic_cog, 'clients', [])
+        if not epic_cog or len(clients) == 0:
             raise BotMissingCog(['Epic'])
 
-        client = epic_cog.clients[0]
+        client = clients[0]
 
-        if client.is_id(value):
+        if fortnitepy.utils.is_id(value):
             player = await client.fetch_user(value)
             if not player:
                 raise fortnitepy.NotFound()
             return player
 
-        if not client.is_display_name(value):
+        if not fortnitepy.utils.is_display_name(value):
             raise InvalidPlayerName()
 
         players = [await client.fetch_user_by_display_name(value)]
@@ -95,3 +94,4 @@ class PlayerTransformer(app_commands.Transformer):
             if not players[0]:
                 raise fortnitepy.NotFound()
             return players[0]
+        return None
