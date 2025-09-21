@@ -5,16 +5,33 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "fndeutils"
 version = "0.0.2"
-requires-python = ">=3.11"
+requires-python = "~=3.11.0"
 dependencies = [
-    "Red-DiscordBot>=3.5.0",
-    "fortnite-api",
-    "fortnitepy @ git+https://github.com/Fortnite-DE/fortnitepy.git#egg=fortnitepy",
-    "pillow",
-    "pytz"
+    "async-timeout~=5.0",
+    "fortnite-api~=3.0",
+    "fortnitepy",
+    "pillow~=11.0",
+    "pytz~=2025.2",
+    "red-discordbot~=3.5.21",
 ]
 
-[tool.black]
-line-length = 120
-skip-string-normalization = true
+[tool.uv.sources]
+fortnitepy = { git = "https://github.com/Fortnite-DE/fortnitepy.git", rev = "master" }
 
+[dependency-groups]
+dev = [
+    "pre-commit>=4.3.0",
+    "redgettext>=3.4.2",
+    "ruff>=0.13.0",
+]
+
+[tool.ruff.lint]
+select = [        
+    "E", # pycodestyle
+    "F", # Pyflakes
+    "UP", # pyupgrade
+    "B", # flake8-bugbear
+    "SIM", # flake8-simplify
+    "I", # isort
+    "FAST", # fastapi
+]
