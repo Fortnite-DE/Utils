@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from PIL import Image, ImageDraw
 
 __all__ = ["channel", "color", "create_rounded_rectangle_mask"]

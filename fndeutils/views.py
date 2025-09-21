@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import TYPE_CHECKING, Any
 
 import discord
@@ -34,9 +36,7 @@ class View(discord.ui.View):
                 self.remove_item(item)
         await self.interaction.edit_original_response(view=self)
 
-    async def interaction_check(
-        self, interaction: discord.Interaction["Red"], /
-    ) -> bool:
+    async def interaction_check(self, interaction: discord.Interaction[Red], /) -> bool:
         if self.owner_only and self.owner and interaction.user != self.owner:
             embed = discord.Embed(colour=discord.Colour.dark_red())
             embed.description = _("You are not authorized to interact with this menu.")
@@ -46,7 +46,7 @@ class View(discord.ui.View):
 
     async def on_error(
         self,
-        interaction: discord.Interaction["Red"],
+        interaction: discord.Interaction[Red],
         error: Exception,
         item: discord.ui.Item[Any],
         /,

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import asyncio
 from contextlib import suppress
 from typing import TYPE_CHECKING
@@ -16,7 +18,7 @@ if TYPE_CHECKING:
 
 class CustomEmojiTransformer(app_commands.Transformer):
     async def transform(
-        self, interaction: discord.Interaction["Red"], value: str, /
+        self, interaction: discord.Interaction[Red], value: str, /
     ) -> discord.PartialEmoji:
         ctx = await commands.Context.from_interaction(interaction)
         emoji = await commands.PartialEmojiConverter().convert(ctx, value)
@@ -25,12 +27,12 @@ class CustomEmojiTransformer(app_commands.Transformer):
 
 class PlayerTransformer(app_commands.Transformer):
     async def autocomplete(
-        self, interaction: discord.Interaction["Red"], current: str
+        self, interaction: discord.Interaction[Red], current: str
     ) -> list[app_commands.Choice]:
         return (await self._get_player_options(interaction, current))[:25]
 
     async def _get_player_options(
-        self, interaction: discord.Interaction["Red"], current: str
+        self, interaction: discord.Interaction[Red], current: str
     ) -> list[app_commands.Choice]:
         epic_cog = interaction.client.get_cog("Epic")
         clients: list[fortnitepy.Client] = getattr(epic_cog, "clients", [])
@@ -82,7 +84,7 @@ class PlayerTransformer(app_commands.Transformer):
         return options
 
     async def transform(
-        self, interaction: discord.Interaction["Red"], value: str
+        self, interaction: discord.Interaction[Red], value: str
     ) -> fortnitepy.User | None:
         epic_cog = interaction.client.get_cog("Epic")
         clients: list[fortnitepy.Client] = getattr(epic_cog, "clients", [])

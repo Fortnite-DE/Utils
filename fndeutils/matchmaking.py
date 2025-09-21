@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 MESSAGE_COUNT_OFFSET = 5
 
 DELETE_AFK_LOBBY = 5 * 60  # 5 Minuten
