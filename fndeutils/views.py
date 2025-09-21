@@ -11,6 +11,12 @@ if TYPE_CHECKING:
 _ = Translator("FndeUtils", __file__)
 
 
+class BasicResponseView(discord.ui.LayoutView):
+    def __init__(self, title: str, text: str) -> None:
+        super().__init__()
+        self.add_item(discord.ui.TextDisplay(f"# {title}\n{text}"))
+
+
 class View(discord.ui.View):
     def __init__(
         self,
