@@ -1,8 +1,15 @@
 from datetime import datetime, time, timedelta
+from typing import Literal
 
 import pytz
 from babel.dates import format_timedelta
 from redbot.core.i18n import get_babel_locale
+
+__all__ = [
+    "to_utc_datetime",
+    "to_utc_time",
+    "humanize_timedelta",
+]
 
 
 def to_utc_datetime(local_dt: datetime, timezone: str) -> datetime:
@@ -19,18 +26,22 @@ def to_utc_time(local_t: time, timezone: str) -> time:
     return dt_utc.time()
 
 
-def humanize_timedelta(timedelta_: timedelta, include_time: bool = False, format_: str = 'long'):
+def humanize_timedelta(
+    timedelta_: timedelta,
+    include_time: bool = False,
+    format_: Literal["narrow", "short", "medium", "long"] = "long",
+):
     seconds = abs(timedelta_.total_seconds())
     periods = [
-        ('days', 60 * 60 * 24 * 365, lambda x: x * 365),  # years
-        ('days', 60 * 60 * 24 * 30, lambda x: x * 30),  # months
-        ('days', 60 * 60 * 24 * 7, lambda x: x * 7),  # weeks
-        ('days', 60 * 60 * 24, lambda x: x),
+        ("days", 60 * 60 * 24 * 365, lambda x: x * 365),  # years
+        ("days", 60 * 60 * 24 * 30, lambda x: x * 30),  # months
+        ("days", 60 * 60 * 24 * 7, lambda x: x * 7),  # weeks
+        ("days", 60 * 60 * 24, lambda x: x),
     ]
 
     time_periods = [
-        ('hours', 60 * 60, lambda x: x),
-        ('minutes', 60, lambda x: x),
+        ("hours", 60 * 60, lambda x: x),
+        ("minutes", 60, lambda x: x),
     ]
 
     if include_time or timedelta_.days == 0:
@@ -50,4 +61,4 @@ def humanize_timedelta(timedelta_: timedelta, include_time: bool = False, format
                     locale=get_babel_locale(),
                 )
             )
-    return ' '.join(strings)
+    return " ".join(strings)

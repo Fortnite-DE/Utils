@@ -1,11 +1,11 @@
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from zoneinfo import ZoneInfo
 
 FORTNITE_API_ICON_LINK = "https://fortnite-api.com/assets/img/logo_small_128.png?t="
 
 
 def get_fortnite_api_icon_link():
-    return f"{FORTNITE_API_ICON_LINK}{datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()}"
+    return f"{FORTNITE_API_ICON_LINK}{datetime.now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()}"
 
 
 #########################################
@@ -57,9 +57,13 @@ SEASONS = {
 SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_37-00_C6S4_EGS_Launcher_KeyArt_FNLogo_Blade_1200x1600_1200x1600-0924136c90b79f9006796f69f24a07f6"
 SEASON_COLOR = 0xFFA635
 SEASON_GRADIENT = [0xB4B5B7, 0x424145]
-SEASON_START = datetime(day=7, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_START = datetime(
+    day=7, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+)
 SEASON_START_OFFSET = timedelta(hours=0)
-SEASON_END = datetime(day=1, month=11, year=2025, hour=10, minute=00, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_END = datetime(
+    day=1, month=11, year=2025, hour=10, minute=00, tzinfo=ZoneInfo("Europe/Berlin")
+)
 
 EVENT_START = None
 
@@ -73,9 +77,13 @@ OG_SEASONS = SEASONS
 OG_SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/DE_FNFigment_37-00_C1S5_EGS_Launcher_KeyArt_Blade_1200x1600_1200x1600-c121e3c3d7a4236f0901934dd2200b76"
 OG_SEASON_COLOR = 0xE259AD
 OG_SEASON_GRADIENT = [0xCD0D3C, 0x37277F]
-OG_SEASON_START = datetime(day=7, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_START = datetime(
+    day=7, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+)
 OG_SEASON_START_OFFSET = timedelta(hours=0)
-OG_SEASON_END = datetime(day=3, month=10, year=2025, hour=10, minute=00, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_END = datetime(
+    day=3, month=10, year=2025, hour=10, minute=00, tzinfo=ZoneInfo("Europe/Berlin")
+)
 
 OG_EVENT_START = None
 
@@ -99,9 +107,13 @@ FESTIVAL_ARTISTS = {
 FESTIVAL_SEASON_COVER_URL = "https://cdn2.unrealengine.com/de-fnsp-09-dryerase-discoverplaylisttile-1920x1080-1920x1080-b32681cd6a90.jpg?resize=1&w=2560"
 FESTIVAL_SEASON_COLOR = 0x78E142
 FESTIVAL_SEASON_GRADIENT = [0x3BCE1E, 0xFFDB10]
-FESTIVAL_SEASON_START = datetime(day=17, month=6, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+FESTIVAL_SEASON_START = datetime(
+    day=17, month=6, year=2025, hour=10, minute=0, tzinfo=UTC
+)
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
-FESTIVAL_SEASON_END = datetime(day=26, month=8, year=2025, hour=9, minute=30, tzinfo=timezone.utc)
+FESTIVAL_SEASON_END = datetime(
+    day=26, month=8, year=2025, hour=9, minute=30, tzinfo=UTC
+)
 
 FESTIVAL_EVENT_START = None
 
@@ -114,14 +126,12 @@ LEGO_PASSES = {
     5: "Goldrausch-Galerie",
 }
 
-LEGO_SEASON_COVER_URL = (
-    "https://cdn2.unrealengine.com/fortnite-rebel-oro-lego-style-thumbnail-576x576-768a2b70edd5.jpg?resize=1&w=2560"
-)
+LEGO_SEASON_COVER_URL = "https://cdn2.unrealengine.com/fortnite-rebel-oro-lego-style-thumbnail-576x576-768a2b70edd5.jpg?resize=1&w=2560"
 LEGO_SEASON_COLOR = 0xED8109
 LEGO_SEASON_GRADIENT = [0x321B0E, 0xAD2223]
-LEGO_SEASON_START = datetime(day=11, month=3, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+LEGO_SEASON_START = datetime(day=11, month=3, year=2025, hour=10, minute=0, tzinfo=UTC)
 LEGO_SEASON_START_OFFSET = timedelta(hours=0)
-LEGO_SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+LEGO_SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=UTC)
 
 
 LEGO_EVENT_START = None
