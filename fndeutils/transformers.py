@@ -15,6 +15,11 @@ from .errors import BotMissingCog, InvalidPlayerName
 if TYPE_CHECKING:
     from redbot.core.bot import Red
 
+__all__ = [
+    "CustomEmojiTransformer",
+    "PlayerTransformer",
+]
+
 
 class CustomEmojiTransformer(app_commands.Transformer):
     async def transform(
