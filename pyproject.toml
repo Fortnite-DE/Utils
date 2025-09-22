@@ -20,9 +20,9 @@ fortnitepy = { git = "https://github.com/Fortnite-DE/fortnitepy.git", rev = "mas
 
 [dependency-groups]
 dev = [
-    "pre-commit>=4.3.0",
-    "redgettext>=3.4.2",
-    "ruff>=0.13.0",
+    "pre-commit~=4.3",
+    "redgettext~=3.4",
+    "ruff==v0.13.1",
 ]
 
 [tool.ruff.lint]

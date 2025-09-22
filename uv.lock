@@ -372,9 +372,9 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "pre-commit", specifier = ">=4.3.0" },
-    { name = "redgettext", specifier = ">=3.4.2" },
-    { name = "ruff", specifier = ">=0.13.0" },
+    { name = "pre-commit", specifier = "~=4.3" },
+    { name = "redgettext", specifier = "~=3.4" },
+    { name = "ruff", specifier = "==0.13.1" },
 ]
 
 [[package]]
