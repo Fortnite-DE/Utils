@@ -1,4 +1,5 @@
 from .datetime import *
+from .errors import *
 from .fortnite import *
 from .image import *
 from .matchmaking import *
