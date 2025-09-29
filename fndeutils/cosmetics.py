@@ -36,10 +36,10 @@ def get_cosmetic_data(cosmetic: Cosmetic) -> CosmeticData:
         image = cosmetic.images and (
             cosmetic.images.featured
             or cosmetic.images.icon
+            or cosmetic.images.small_icon
             or cosmetic.images.large
             or cosmetic.images.small
         )
-        assert image is not None
-        image_url = image.url
+        image_url = image.url if image else ""
         display_type = cosmetic.type.display_value if cosmetic.type else "???"
     return CosmeticData(name, image_url, display_type)
