@@ -23,6 +23,7 @@ Cosmetic = (
 class CosmeticData(NamedTuple):
     name: str
     image_url: str
+    type: fortnite_api.CosmeticType
     display_type: str
 
 
@@ -30,6 +31,7 @@ def get_cosmetic_data(cosmetic: Cosmetic) -> CosmeticData:
     if isinstance(cosmetic, fortnite_api.CosmeticTrack):
         name = cosmetic.title
         image_url = cosmetic.album_art.url
+        type_ = fortnite_api.CosmeticType.JAM_TRACK
         display_type = _t("Jam Track")
     else:
         name = cosmetic.name
@@ -41,5 +43,7 @@ def get_cosmetic_data(cosmetic: Cosmetic) -> CosmeticData:
             or cosmetic.images.small
         )
         image_url = image.url if image else ""
+        assert cosmetic.type is not None
+        type_ = cosmetic.type.value
         display_type = cosmetic.type.display_value if cosmetic.type else "???"
-    return CosmeticData(name, image_url, display_type)
+    return CosmeticData(name, image_url, type_, display_type)
