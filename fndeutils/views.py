@@ -19,9 +19,21 @@ _ = Translator("FndeUtils", __file__)
 
 
 class BasicResponseView(discord.ui.LayoutView):
-    def __init__(self, title: str, text: str) -> None:
+    def __init__(
+        self,
+        title: str,
+        text: str,
+        colour: discord.Colour | None = None,
+        thumbnail: str | discord.File | discord.UnfurledMediaItem | None = None,
+    ) -> None:
         super().__init__()
-        self.add_item(discord.ui.TextDisplay(f"# {title}\n{text}"))
+        child = discord.ui.TextDisplay(f"# {title}\n{text}")
+        if thumbnail:
+            child = discord.ui.Section(
+                child,
+                accessory=discord.ui.Thumbnail(thumbnail),
+            )
+        self.add_item(discord.ui.Container(child, accent_colour=colour))
 
 
 class View(discord.ui.View):
