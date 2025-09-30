@@ -5,6 +5,8 @@ from typing import TYPE_CHECKING, Any
 import discord
 from redbot.core.i18n import Translator
 
+from .colour import Colour
+
 if TYPE_CHECKING:
     from redbot.core.bot import Red
 
@@ -23,7 +25,7 @@ class BasicResponseView(discord.ui.LayoutView):
         self,
         title: str,
         text: str,
-        colour: discord.Colour | None = None,
+        colour: Colour | None = None,
         thumbnail: str | discord.File | discord.UnfurledMediaItem | None = None,
     ) -> None:
         super().__init__()

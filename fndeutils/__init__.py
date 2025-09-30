@@ -1,3 +1,4 @@
+from .colour import *
 from .cosmetics import *
 from .datetime import *
 from .errors import *
