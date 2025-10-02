@@ -4,6 +4,7 @@ from .datetime import *
 from .errors import *
 from .fortnite import *
 from .image import *
+from .locale import *
 from .matchmaking import *
 from .transformers import *
 from .unban import *
