@@ -14,6 +14,7 @@ if TYPE_CHECKING:
 __all__ = [
     "BaseView",
     "BasicResponseView",
+    "ConfirmView",
     "EmbedPaginationView",
     "InteractiveView",
     "Modal",
