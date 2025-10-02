@@ -8,9 +8,9 @@ from babel.dates import format_timedelta
 from redbot.core.i18n import get_babel_locale
 
 __all__ = [
+    "humanize_timedelta",
     "to_utc_datetime",
     "to_utc_time",
-    "humanize_timedelta",
 ]
 
 

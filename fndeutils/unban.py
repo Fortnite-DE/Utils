@@ -8,9 +8,9 @@ from yarl import URL
 __all__ = [
     "TIME_AFTER_BAN",
     "TIME_AFTER_TRY",
-    "VOTE_TIME",
-    "VOTE_OVERTIME",
     "TIME_ON_UNBAN_SERVER",
+    "VOTE_OVERTIME",
+    "VOTE_TIME",
     "generate_google_form_link",
 ]
 

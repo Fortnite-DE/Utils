@@ -14,11 +14,11 @@ if TYPE_CHECKING:
 __all__ = [
     "BaseView",
     "BasicResponseView",
+    "EmbedPaginationView",
     "InteractiveView",
+    "Modal",
     "PaginationView",
     "View",
-    "Modal",
-    "EmbedPaginationView",
 ]
 
 _ = Translator("FndeUtils", __file__)

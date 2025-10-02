@@ -14,9 +14,9 @@ from redbot.core.i18n import get_babel_locale as red_get_babel_locale, get_local
 
 __all__ = (
     "Locale",
+    "create_locale_str_factory",
     "get_babel_locale",
     "get_game_language",
-    "create_locale_str_factory",
 )
 
 
