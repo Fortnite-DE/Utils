@@ -105,6 +105,43 @@ class InteractiveView(BaseView):
             await self.messageable.edit(**kwargs)
 
 
+class ConfirmView(InteractiveView):
+    def __init__(
+        self,
+        ref: commands.Context | discord.Interaction | discord.Message,
+        *,
+        with_cancel: bool = False,
+        confirm_label: str | None = None,
+        cancel_label: str | None = None,
+        owner: discord.User | discord.Member | None = None,
+        owner_only: bool = True,
+        timeout: float | None = 300,
+    ) -> None:
+        super().__init__(ref, owner=owner, owner_only=owner_only, timeout=timeout)
+        self.confirmed: bool = False
+        self.interaction: discord.Interaction | None = None
+
+        if not with_cancel:
+            self.remove_item(self.cancel_button)
+        if confirm_label:
+            self.confirm_button.label = confirm_label
+        if cancel_label:
+            self.cancel_button.label = cancel_label
+
+    navigation_row = discord.ui.ActionRow()
+
+    @navigation_row.button(label=_t("Confirm"), style=discord.ButtonStyle.green)
+    async def confirm_button(self, interaction: discord.Interaction, __) -> None:
+        self.confirmed = True
+        self.interaction = interaction
+        self.stop()
+
+    @navigation_row.button(label=_t("Cancel"), style=discord.ButtonStyle.red)
+    async def cancel_button(self, interaction: discord.Interaction, __) -> None:
+        self.interaction = interaction
+        self.stop()
+
+
 class PaginationView(InteractiveView):
     def __init__(
         self,
