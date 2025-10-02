@@ -3,7 +3,7 @@ from typing import NamedTuple
 import fortnite_api
 from redbot.core.i18n import Translator
 
-_t = Translator("FndeUtils", __file__)
+_ = Translator("FndeUtils", __file__)
 
 __all__ = [
     "Cosmetic",
@@ -32,7 +32,7 @@ def get_cosmetic_data(cosmetic: Cosmetic) -> CosmeticData:
         name = cosmetic.title
         image_url = cosmetic.album_art.url
         type_ = fortnite_api.CosmeticType.JAM_TRACK
-        display_type = _t("Jam Track")
+        display_type = _("Jam Track")
     else:
         name = cosmetic.name
         image = cosmetic.images and (

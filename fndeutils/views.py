@@ -21,7 +21,7 @@ __all__ = [
     "EmbedPaginationView",
 ]
 
-_t = Translator("FndeUtils", __file__)
+_ = Translator("FndeUtils", __file__)
 
 Page = list[discord.ui.Item]
 
@@ -87,7 +87,7 @@ class InteractiveView(BaseView):
     async def interaction_check(self, interaction: discord.Interaction, /) -> bool:
         if self.owner_only and self.owner and interaction.user != self.owner:
             embed = discord.Embed(colour=discord.Colour.dark_red())
-            embed.description = _t("You are not authorized to interact with this menu.")
+            embed.description = _("You are not authorized to interact with this menu.")
             await interaction.response.send_message(embed=embed, ephemeral=True)
             return False
         return True
@@ -130,13 +130,13 @@ class ConfirmView(InteractiveView):
 
     navigation_row = discord.ui.ActionRow()
 
-    @navigation_row.button(label=_t("Confirm"), style=discord.ButtonStyle.green)
+    @navigation_row.button(label=_("Confirm"), style=discord.ButtonStyle.green)
     async def confirm_button(self, interaction: discord.Interaction, __) -> None:
         self.confirmed = True
         self.interaction = interaction
         self.stop()
 
-    @navigation_row.button(label=_t("Cancel"), style=discord.ButtonStyle.red)
+    @navigation_row.button(label=_("Cancel"), style=discord.ButtonStyle.red)
     async def cancel_button(self, interaction: discord.Interaction, __) -> None:
         self.interaction = interaction
         self.stop()
@@ -182,25 +182,25 @@ class PaginationView(InteractiveView):
     navigation_row = discord.ui.ActionRow()
 
     @navigation_row.button(emoji="⏮️")
-    async def first_page(self, interaction: discord.Interaction, _) -> None:
+    async def first_page(self, interaction: discord.Interaction, __) -> None:
         self.current_page = 0
         self._build_page()
         await interaction.response.edit_message(view=self)
 
     @navigation_row.button(emoji="⬅️")
-    async def prev_page(self, interaction: discord.Interaction, _) -> None:
+    async def prev_page(self, interaction: discord.Interaction, __) -> None:
         self.current_page -= 1
         self._build_page()
         await interaction.response.edit_message(view=self)
 
     @navigation_row.button(emoji="➡️")
-    async def next_page(self, interaction: discord.Interaction, _) -> None:
+    async def next_page(self, interaction: discord.Interaction, __) -> None:
         self.current_page += 1
         self._build_page()
         await interaction.response.edit_message(view=self)
 
     @navigation_row.button(emoji="⏭️")
-    async def last_page(self, interaction: discord.Interaction, _) -> None:
+    async def last_page(self, interaction: discord.Interaction, __) -> None:
         self.current_page = len(self.pages) - 1
         self._build_page()
         await interaction.response.edit_message(view=self)
