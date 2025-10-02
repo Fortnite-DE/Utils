@@ -12,7 +12,12 @@ from babel.numbers import format_compact_decimal, format_decimal
 from discord import app_commands
 from redbot.core.i18n import get_babel_locale as red_get_babel_locale, get_locale
 
-__all__ = ("Locale", "get_game_language", "create_locale_str_factory")
+__all__ = (
+    "Locale",
+    "get_babel_locale",
+    "get_game_language",
+    "create_locale_str_factory",
+)
 
 
 class Locale(babel.core.Locale):
