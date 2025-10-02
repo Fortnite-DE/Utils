@@ -1,8 +1,9 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Self
 
 import discord
+from redbot.core import commands
 from redbot.core.i18n import Translator
 
 from .colour import Colour
@@ -11,16 +12,31 @@ if TYPE_CHECKING:
     from redbot.core.bot import Red
 
 __all__ = [
+    "BaseView",
     "BasicResponseView",
+    "InteractiveView",
     "View",
     "Modal",
     "PaginationView",
 ]
 
-_ = Translator("FndeUtils", __file__)
+_t = Translator("FndeUtils", __file__)
 
 
-class BasicResponseView(discord.ui.LayoutView):
+class BaseView(discord.ui.LayoutView):
+    async def on_error(
+        self,
+        interaction: discord.Interaction,
+        error: Exception,
+        item: discord.ui.Item[Self],
+        /,
+    ) -> None:
+        interaction.client.dispatch(
+            "error", "on_modal_interaction", self, interaction, error=error
+        )
+
+
+class BasicResponseView(BaseView):
     def __init__(
         self,
         title: str,
@@ -36,6 +52,51 @@ class BasicResponseView(discord.ui.LayoutView):
                 accessory=discord.ui.Thumbnail(thumbnail),
             )
         self.add_item(discord.ui.Container(child, accent_colour=colour))
+
+
+class InteractiveView(BaseView):
+    def __init__(
+        self,
+        ref: commands.Context | discord.Interaction | discord.Message,
+        *,
+        owner: discord.User | discord.Member | None = None,
+        owner_only: bool = True,
+        timeout: float | None = 300,
+    ) -> None:
+        super().__init__(timeout=timeout)
+        ref_owner, messageable = None, None
+        if isinstance(ref, commands.Context):
+            ref_owner = ref.author
+            messageable = ref.interaction or ref.message
+        elif isinstance(ref, discord.Interaction):
+            ref_owner = ref.user
+            messageable = ref
+        elif isinstance(ref, discord.Message):
+            ref_owner = ref.author
+            messageable = ref
+        else:
+            raise TypeError("ref must be a commands.Context or discord.Interaction")
+
+        self.messageable: discord.Interaction | discord.Message = messageable
+        self.owner: discord.User | discord.Member = owner or ref_owner
+        self.owner_only: bool = owner_only
+
+    async def interaction_check(self, interaction: discord.Interaction, /) -> bool:
+        if self.owner_only and self.owner and interaction.user != self.owner:
+            embed = discord.Embed(colour=discord.Colour.dark_red())
+            embed.description = _t("You are not authorized to interact with this menu.")
+            await interaction.response.send_message(embed=embed, ephemeral=True)
+            return False
+        return True
+
+    async def on_timeout(self) -> None:
+        for item in self.walk_children():
+            if item.is_dispatchable() and hasattr(item, "disabled"):
+                item.disabled = True  # type: ignore[attr-defined]
+        if isinstance(self.messageable, discord.Interaction):
+            await self.messageable.edit_original_response(view=self)
+        elif isinstance(self.messageable, discord.Message):
+            await self.messageable.edit(view=self)
 
 
 class View(discord.ui.View):
