@@ -131,36 +131,38 @@ class PaginationView(InteractiveView):
         **kwargs,
     ) -> Self:
         if len(pages) == 0:
-            raise ValueError("No items provided")
+            raise ValueError("No pages provided")
+        if start_page < 0 or start_page >= len(pages):
+            raise ValueError("start_page must be between 0 and the number of pages - 1")
         view = cls(pages, ctx, start_page=start_page, **kwargs)
         view._build_page()
         if edit:
-            await view._edit_message(view=view)
+            await view._edit_message(view=view, ephemeral=ephemeral)
         else:
-            await ctx.send(**kwargs)
+            await ctx.send(view=view, ephemeral=ephemeral)
         return view
 
     navigation_row = discord.ui.ActionRow()
 
-    @discord.ui.button(emoji="⏮️")
+    @navigation_row.button(emoji="⏮️")
     async def first_page(self, interaction: discord.Interaction, _) -> None:
         self.current_page = 0
         self._build_page()
         await interaction.response.edit_message(view=self)
 
-    @discord.ui.button(emoji="⬅️")
+    @navigation_row.button(emoji="⬅️")
     async def prev_page(self, interaction: discord.Interaction, _) -> None:
         self.current_page -= 1
         self._build_page()
         await interaction.response.edit_message(view=self)
 
-    @discord.ui.button(emoji="➡️")
+    @navigation_row.button(emoji="➡️")
     async def next_page(self, interaction: discord.Interaction, _) -> None:
         self.current_page += 1
         self._build_page()
         await interaction.response.edit_message(view=self)
 
-    @discord.ui.button(emoji="⏭️")
+    @navigation_row.button(emoji="⏭️")
     async def last_page(self, interaction: discord.Interaction, _) -> None:
         self.current_page = len(self.pages) - 1
         self._build_page()
@@ -170,24 +172,29 @@ class PaginationView(InteractiveView):
         self.clear_items()
         for item in self.pages[self.current_page]:
             self.add_item(item)
+
+        # No need for navigation buttons
+        if len(self.pages) == 1:
+            return
+
         for item in self._original_components:
             self.add_item(item)
 
+        back_buttons = [self.first_page, self.prev_page]
+        forward_buttons = [self.next_page, self.last_page]
         if self.current_page == 0:  # First page
-            self.first_page.disabled = True
-            self.prev_page.disabled = True
-            self.last_page.disabled = False
-            self.next_page.disabled = False
+            for button in back_buttons:
+                button.disabled = True
+            for button in forward_buttons:
+                button.disabled = False
         elif self.current_page == len(self.pages) - 1:  # Last page
-            self.first_page.disabled = False
-            self.prev_page.disabled = False
-            self.last_page.disabled = True
-            self.next_page.disabled = True
+            for button in back_buttons:
+                button.disabled = False
+            for button in forward_buttons:
+                button.disabled = True
         else:
-            self.first_page.disabled = False
-            self.prev_page.disabled = False
-            self.last_page.disabled = False
-            self.next_page.disabled = False
+            for button in back_buttons + forward_buttons:
+                button.disabled = False
 
 
 class View(discord.ui.View):
