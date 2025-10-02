@@ -15,12 +15,15 @@ __all__ = [
     "BaseView",
     "BasicResponseView",
     "InteractiveView",
+    "PaginationView",
     "View",
     "Modal",
-    "PaginationView",
+    "EmbedPaginationView",
 ]
 
 _t = Translator("FndeUtils", __file__)
+
+Page = list[discord.ui.Item]
 
 
 class BaseView(discord.ui.LayoutView):
@@ -93,10 +96,98 @@ class InteractiveView(BaseView):
         for item in self.walk_children():
             if item.is_dispatchable() and hasattr(item, "disabled"):
                 item.disabled = True  # type: ignore[attr-defined]
+        await self._edit_message(view=self)
+
+    async def _edit_message(self, **kwargs) -> None:
         if isinstance(self.messageable, discord.Interaction):
-            await self.messageable.edit_original_response(view=self)
+            await self.messageable.edit_original_response(**kwargs)
         elif isinstance(self.messageable, discord.Message):
-            await self.messageable.edit(view=self)
+            await self.messageable.edit(**kwargs)
+
+
+class PaginationView(InteractiveView):
+    def __init__(
+        self,
+        pages: list[Page],
+        ref: commands.Context,
+        *,
+        start_page: int = 0,
+        **kwargs,
+    ) -> None:
+        super().__init__(ref, **kwargs)
+        self.pages: list[Page] = pages
+        self.current_page: int = start_page
+        self._original_components = self.children.copy()
+
+    @classmethod
+    async def start(
+        cls,
+        pages: list[Page],
+        ctx: commands.Context,
+        *,
+        edit: bool = False,
+        ephemeral: bool = False,
+        start_page: int = 0,
+        **kwargs,
+    ) -> Self:
+        if len(pages) == 0:
+            raise ValueError("No items provided")
+        view = cls(pages, ctx, start_page=start_page, **kwargs)
+        view._build_page()
+        if edit:
+            await view._edit_message(view=view)
+        else:
+            await ctx.send(**kwargs)
+        return view
+
+    navigation_row = discord.ui.ActionRow()
+
+    @discord.ui.button(emoji="⏮️")
+    async def first_page(self, interaction: discord.Interaction, _) -> None:
+        self.current_page = 0
+        self._build_page()
+        await interaction.response.edit_message(view=self)
+
+    @discord.ui.button(emoji="⬅️")
+    async def prev_page(self, interaction: discord.Interaction, _) -> None:
+        self.current_page -= 1
+        self._build_page()
+        await interaction.response.edit_message(view=self)
+
+    @discord.ui.button(emoji="➡️")
+    async def next_page(self, interaction: discord.Interaction, _) -> None:
+        self.current_page += 1
+        self._build_page()
+        await interaction.response.edit_message(view=self)
+
+    @discord.ui.button(emoji="⏭️")
+    async def last_page(self, interaction: discord.Interaction, _) -> None:
+        self.current_page = len(self.pages) - 1
+        self._build_page()
+        await interaction.response.edit_message(view=self)
+
+    def _build_page(self) -> None:
+        self.clear_items()
+        for item in self.pages[self.current_page]:
+            self.add_item(item)
+        for item in self._original_components:
+            self.add_item(item)
+
+        if self.current_page == 0:  # First page
+            self.first_page.disabled = True
+            self.prev_page.disabled = True
+            self.last_page.disabled = False
+            self.next_page.disabled = False
+        elif self.current_page == len(self.pages) - 1:  # Last page
+            self.first_page.disabled = False
+            self.prev_page.disabled = False
+            self.last_page.disabled = True
+            self.next_page.disabled = True
+        else:
+            self.first_page.disabled = False
+            self.prev_page.disabled = False
+            self.last_page.disabled = False
+            self.next_page.disabled = False
 
 
 class View(discord.ui.View):
@@ -153,7 +244,7 @@ class Modal(discord.ui.Modal):
         )
 
 
-class PaginationView(View):
+class EmbedPaginationView(View):
     def __init__(self, embeds: list[discord.Embed], start_page: int = 0, **kwargs):
         super().__init__(**kwargs)
         self.embeds: list[discord.Embed] = embeds
