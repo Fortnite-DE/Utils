@@ -272,7 +272,7 @@ class EmbedPaginationView(View):
                 view.next_page.disabled = True
                 view.last_page.disabled = True
         if edit:
-            await interaction.edit_original_message(embed=embeds[0], view=view)
+            await interaction.edit_original_response(embed=embeds[0], view=view)
         else:
             kwargs = dict(embed=embeds[0], ephemeral=ephemeral)
             if view:
