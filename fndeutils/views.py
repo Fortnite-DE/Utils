@@ -112,8 +112,6 @@ class ConfirmView(InteractiveView):
         ref: commands.Context | discord.Interaction | discord.Message,
         *,
         with_cancel: bool = False,
-        confirm_label: str | None = None,
-        cancel_label: str | None = None,
         owner: discord.User | discord.Member | None = None,
         owner_only: bool = True,
         timeout: float | None = 300,
@@ -124,10 +122,6 @@ class ConfirmView(InteractiveView):
 
         if not with_cancel:
             self.remove_item(self.cancel_button)
-        if confirm_label:
-            self.confirm_button.label = confirm_label
-        if cancel_label:
-            self.cancel_button.label = cancel_label
 
     navigation_row = discord.ui.ActionRow()
 
