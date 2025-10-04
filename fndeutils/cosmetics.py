@@ -25,6 +25,7 @@ class CosmeticData(NamedTuple):
     image_url: str
     type: fortnite_api.CosmeticType
     display_type: str
+    is_shop: bool = False
 
 
 def get_cosmetic_data(cosmetic: Cosmetic) -> CosmeticData:
@@ -46,4 +47,9 @@ def get_cosmetic_data(cosmetic: Cosmetic) -> CosmeticData:
         assert cosmetic.type is not None
         type_ = cosmetic.type.value
         display_type = cosmetic.type.display_value if cosmetic.type else "???"
-    return CosmeticData(name, image_url, type_, display_type)
+    is_shop = not (
+        isinstance(cosmetic, (fortnite_api.CosmeticBr, fortnite_api.CosmeticCar))
+        and "Cosmetics.Source.ItemShop" not in cosmetic.gameplay_tags
+    )
+
+    return CosmeticData(name, image_url, type_, display_type, is_shop)
