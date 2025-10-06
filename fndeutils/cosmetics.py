@@ -27,7 +27,7 @@ class Cosmetic:
     type: fortnite_api.CosmeticType
     display_type: str
     image_url: str
-    is_shop: bool = False
+    is_shop: bool
 
 
 def get_cosmetic_data(cosmetic: CosmeticT) -> Cosmetic:
