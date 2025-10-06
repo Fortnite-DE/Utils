@@ -1,4 +1,4 @@
-from typing import NamedTuple
+from dataclasses import dataclass
 
 import fortnite_api
 from redbot.core.i18n import Translator
@@ -7,11 +7,11 @@ _ = Translator("FndeUtils", __file__)
 
 __all__ = [
     "Cosmetic",
-    "CosmeticData",
+    "CosmeticT",
     "get_cosmetic_data",
 ]
 
-Cosmetic = (
+CosmeticT = (
     fortnite_api.CosmeticBr
     | fortnite_api.CosmeticCar
     | fortnite_api.CosmeticLegoKit
@@ -20,15 +20,17 @@ Cosmetic = (
 )
 
 
-class CosmeticData(NamedTuple):
+@dataclass(frozen=True)
+class Cosmetic:
+    id: str
     name: str
-    image_url: str
     type: fortnite_api.CosmeticType
     display_type: str
+    image_url: str
     is_shop: bool = False
 
 
-def get_cosmetic_data(cosmetic: Cosmetic) -> CosmeticData:
+def get_cosmetic_data(cosmetic: CosmeticT) -> Cosmetic:
     if isinstance(cosmetic, fortnite_api.CosmeticTrack):
         name = cosmetic.title
         image_url = cosmetic.album_art.url
@@ -52,4 +54,4 @@ def get_cosmetic_data(cosmetic: Cosmetic) -> CosmeticData:
         and "Cosmetics.Source.ItemShop" not in cosmetic.gameplay_tags
     )
 
-    return CosmeticData(name, image_url, type_, display_type, is_shop)
+    return Cosmetic(cosmetic.id, name, type_, display_type, image_url, is_shop)
