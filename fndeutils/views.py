@@ -87,9 +87,12 @@ class InteractiveView(BaseView):
 
     async def interaction_check(self, interaction: discord.Interaction, /) -> bool:
         if self.owner_only and self.owner and interaction.user != self.owner:
-            embed = discord.Embed(colour=discord.Colour.dark_red())
-            embed.description = _("You are not authorized to interact with this menu.")
-            await interaction.response.send_message(embed=embed, ephemeral=True)
+            view = BasicResponseView(
+                _("Unauthorized"),
+                _("You are not authorized to interact with this menu."),
+                colour=Colour.error(),
+            )
+            await interaction.response.send_message(view=view, ephemeral=True)
             return False
         return True
 

@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-10-09 13:44+0200\n"
-"PO-Revision-Date: 2025-10-09 13:45+0200\n"
+"POT-Creation-Date: 2025-10-10 11:58+0200\n"
+"PO-Revision-Date: 2025-10-10 12:02+0200\n"
 "Last-Translator: Lucas Hardt <Luc1412.lh@gmail.com>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -17,14 +17,18 @@ msgstr ""
 msgid "Jam Track"
 msgstr "Jam-Songs"
 
-#: fndeutils/views.py:91 fndeutils/views.py:260
+#: fndeutils/views.py:91
+msgid "Unauthorized"
+msgstr "Nicht Authorisiert"
+
+#: fndeutils/views.py:92 fndeutils/views.py:263
 msgid "You are not authorized to interact with this menu."
 msgstr "Du bist nicht berechtigt, dieses Menü zu verwenden."
 
-#: fndeutils/views.py:128
+#: fndeutils/views.py:131
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: fndeutils/views.py:134
+#: fndeutils/views.py:137
 msgid "Cancel"
 msgstr "Abbrechen"
