@@ -19,7 +19,7 @@ msgstr "Música de Improviso"
 
 #: fndeutils/views.py:91
 msgid "Unauthorized"
-msgstr ""
+msgstr "No autorizado"
 
 #: fndeutils/views.py:92 fndeutils/views.py:263
 msgid "You are not authorized to interact with this menu."
