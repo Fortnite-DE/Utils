@@ -12,7 +12,7 @@ def get_fortnite_api_icon_link():
 ############# Battle Royale #############
 #########################################
 
-SEASON = 37
+SEASON = 38
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
@@ -51,15 +51,15 @@ SEASONS = {
     35: "GALACTIC BATTLE",
     36: [6, 3],
     37: [6, 4],
-    38: [6, 5],
+    38: "the Simpsons",
 }
 
-SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_37-00_C6S4_EGS_Launcher_KeyArt_FNLogo_Blade_1200x1600_1200x1600-0924136c90b79f9006796f69f24a07f6"
-SEASON_COLOR = 0xFFA635
-SEASON_GRADIENT = [0xB4B5B7, 0x424145]
-SEASON_START = datetime(day=7, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_COVER_URL = "https://media.discordapp.net/attachments/1423792767238410301/1434374494130278410/cdn-uploader-FNBR_38-00_C6MS2_BR_DiscoverPlaylistTile_-1920x1080-68ccc1fb.png?ex=6908c198&is=69077018&hm=6450453575b4ce3d535648cfbf3ce8df2d900f2e3f4330279f994c52e8ec8a2f&=&format=webp&quality=lossless&width=2112&height=1188"
+SEASON_COLOR = 0xFDC200
+SEASON_GRADIENT = [0xFDC200, 0xE55421]
+SEASON_START = datetime(day=1, month=11, year=2025, hour=1, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
 SEASON_START_OFFSET = timedelta(hours=0)
-SEASON_END = datetime(day=1, month=11, year=2025, hour=10, minute=00, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_END = datetime(day=29, month=11, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
 
 EVENT_START = None
 
@@ -67,15 +67,15 @@ EVENT_START = None
 ############## Fortnite OG ##############
 #########################################
 
-OG_SEASON = 5
+OG_SEASON = 6
 OG_SEASONS = SEASONS
 
-OG_SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/DE_FNFigment_37-00_C1S5_EGS_Launcher_KeyArt_Blade_1200x1600_1200x1600-c121e3c3d7a4236f0901934dd2200b76"
-OG_SEASON_COLOR = 0xE259AD
-OG_SEASON_GRADIENT = [0xCD0D3C, 0x37277F]
-OG_SEASON_START = datetime(day=7, month=8, year=2025, hour=10, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_COVER_URL = "https://media.discordapp.net/attachments/1423792767238410301/1423804806199509093/de-fnfigment-37-00-c1s6-egs-launcher-keyart-carousel-pdp-2560x1440-logo-2560x1440-bda8f6afb9a5.png?ex=6908894e&is=690737ce&hm=6a10c941315927fcaf057a595d160a90849b49f42b4c95d4617a3d7cf6cf27da&=&format=webp&quality=lossless&width=605&height=340"
+OG_SEASON_COLOR = 0x7A02B2
+OG_SEASON_GRADIENT = [0x7A02B2, 0x52018A]
+OG_SEASON_START = datetime(day=2, month=10, year=2025, hour=11, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
 OG_SEASON_START_OFFSET = timedelta(hours=0)
-OG_SEASON_END = datetime(day=3, month=10, year=2025, hour=10, minute=00, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_END = datetime(day=11, month=12, year=2025, hour=8, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
 
 OG_EVENT_START = None
 
@@ -83,7 +83,7 @@ OG_EVENT_START = None
 ############### Festival ###############
 ########################################
 
-FESTIVAL_SEASON = 9
+FESTIVAL_SEASON = 11
 FESTIVAL_ARTISTS = {
     1: "The Weeknd",
     2: "Lady Gaga",
@@ -94,14 +94,16 @@ FESTIVAL_ARTISTS = {
     7: "Hatsune Miku",
     8: "Sabrina Carpenter",
     9: "Bruno Mars",
+    10: "Gorillaz",
+    11: "Mixtape",
 }
 
-FESTIVAL_SEASON_COVER_URL = "https://cdn2.unrealengine.com/de-fnsp-09-dryerase-discoverplaylisttile-1920x1080-1920x1080-b32681cd6a90.jpg?resize=1&w=2560"
-FESTIVAL_SEASON_COLOR = 0x78E142
-FESTIVAL_SEASON_GRADIENT = [0x3BCE1E, 0xFFDB10]
-FESTIVAL_SEASON_START = datetime(day=17, month=6, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+FESTIVAL_SEASON_COVER_URL = "https://media.discordapp.net/attachments/1423792767238410301/1434356215118434414/cdn-uploader-DE_FNSP_37-50_S11MusicPass_KeyArt_DiscoverPlaylistTile_-1920x1080-18e19bbe.png?ex=6908b092&is=69075f12&hm=cd66658ec5d9b0b16e98d25357aad24f0c080e982200db970fa8e5513b0501f1&=&format=webp&quality=lossless&width=2112&height=1188"
+FESTIVAL_SEASON_COLOR = 0xF7FB6F
+FESTIVAL_SEASON_GRADIENT = [0xF7FB6F, 0xF7FB6F]
+FESTIVAL_SEASON_START = datetime(day=9, month=10, year=2025, hour=11, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
-FESTIVAL_SEASON_END = datetime(day=26, month=8, year=2025, hour=9, minute=30, tzinfo=timezone.utc)
+FESTIVAL_SEASON_END = datetime(day=29, month=11, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
 
 FESTIVAL_EVENT_START = None
 
