@@ -1,4 +1,8 @@
+from __future__ import annotations
+
 from PIL import Image, ImageDraw
+
+__all__ = ["channel", "color", "create_rounded_rectangle_mask"]
 
 
 def channel(i, c, size, start_fill, stop_fill):
@@ -14,13 +18,13 @@ def color(i, size, start_fill, stop_fill):
 def create_rounded_rectangle_mask(size, radius, alpha=255):
     factor = 5
     radius = radius * factor
-    image = Image.new('RGBA', (size[0] * factor, size[1] * factor), (0, 0, 0, 0))
+    image = Image.new("RGBA", (size[0] * factor, size[1] * factor), (0, 0, 0, 0))
     draw = ImageDraw.Draw(image)
     draw.rounded_rectangle(
         (0, 0, size[0] * factor, size[1] * factor),
         radius=radius,
         fill=(255, 255, 255, alpha),
     )
-    image = image.resize(size, Image.LANCZOS)
+    image = image.resize(size, Image.Resampling.LANCZOS)
 
     return image

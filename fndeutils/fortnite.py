@@ -1,11 +1,53 @@
-from datetime import datetime, timedelta, timezone
+from __future__ import annotations
+
+from datetime import UTC, datetime, timedelta
 from zoneinfo import ZoneInfo
+
+__all__ = [
+    "EVENT_START",
+    "FESTIVAL_ARTISTS",
+    "FESTIVAL_EVENT_START",
+    "FESTIVAL_SEASON",
+    "FESTIVAL_SEASON_COLOR",
+    "FESTIVAL_SEASON_COVER_URL",
+    "FESTIVAL_SEASON_END",
+    "FESTIVAL_SEASON_GRADIENT",
+    "FESTIVAL_SEASON_START",
+    "FESTIVAL_SEASON_START_OFFSET",
+    "LEGO_EVENT_START",
+    "LEGO_PASSES",
+    "LEGO_SEASON",
+    "LEGO_SEASON_COLOR",
+    "LEGO_SEASON_COVER_URL",
+    "LEGO_SEASON_END",
+    "LEGO_SEASON_GRADIENT",
+    "LEGO_SEASON_START",
+    "LEGO_SEASON_START_OFFSET",
+    "OG_EVENT_START",
+    "OG_SEASON",
+    "OG_SEASONS",
+    "OG_SEASON_COLOR",
+    "OG_SEASON_COVER_URL",
+    "OG_SEASON_END",
+    "OG_SEASON_GRADIENT",
+    "OG_SEASON_START",
+    "OG_SEASON_START_OFFSET",
+    "SEASON",
+    "SEASONS",
+    "SEASON_COLOR",
+    "SEASON_COVER_URL",
+    "SEASON_END",
+    "SEASON_GRADIENT",
+    "SEASON_START",
+    "SEASON_START_OFFSET",
+    "get_fortnite_api_icon_link",
+]
 
 FORTNITE_API_ICON_LINK = "https://fortnite-api.com/assets/img/logo_small_128.png?t="
 
 
 def get_fortnite_api_icon_link():
-    return f"{FORTNITE_API_ICON_LINK}{datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()}"
+    return f"{FORTNITE_API_ICON_LINK}{datetime.now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()}"
 
 
 #########################################
@@ -121,9 +163,9 @@ LEGO_SEASON_COVER_URL = (
 )
 LEGO_SEASON_COLOR = 0xED8109
 LEGO_SEASON_GRADIENT = [0x321B0E, 0xAD2223]
-LEGO_SEASON_START = datetime(day=11, month=3, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+LEGO_SEASON_START = datetime(day=11, month=3, year=2025, hour=10, minute=0, tzinfo=UTC)
 LEGO_SEASON_START_OFFSET = timedelta(hours=0)
-LEGO_SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=timezone.utc)
+LEGO_SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=UTC)
 
 
 LEGO_EVENT_START = None
