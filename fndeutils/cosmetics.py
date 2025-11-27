@@ -52,6 +52,7 @@ def get_cosmetic_data(cosmetic: CosmeticT) -> Cosmetic:
     is_shop = not (
         isinstance(cosmetic, (fortnite_api.CosmeticBr, fortnite_api.CosmeticCar))
         and "Cosmetics.Source.ItemShop" not in cosmetic.gameplay_tags
+        and not cosmetic.shop_history
     )
 
     return Cosmetic(cosmetic.id, name, type_, display_type, image_url, is_shop)
