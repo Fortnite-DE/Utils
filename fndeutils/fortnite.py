@@ -99,9 +99,13 @@ SEASONS = {
 SEASON_COVER_URL = "https://media.discordapp.net/attachments/1423792767238410301/1434374494130278410/cdn-uploader-FNBR_38-00_C6MS2_BR_DiscoverPlaylistTile_-1920x1080-68ccc1fb.png?ex=6908c198&is=69077018&hm=6450453575b4ce3d535648cfbf3ce8df2d900f2e3f4330279f994c52e8ec8a2f&=&format=webp&quality=lossless&width=2112&height=1188"
 SEASON_COLOR = 0xFDC200
 SEASON_GRADIENT = [0xFDC200, 0xE55421]
-SEASON_START = datetime(day=1, month=11, year=2025, hour=1, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_START = datetime(
+    day=1, month=11, year=2025, hour=1, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+)
 SEASON_START_OFFSET = timedelta(hours=0)
-SEASON_END = datetime(day=29, month=11, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
+SEASON_END = datetime(
+    day=30, month=11, year=2025, hour=3, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+)
 
 EVENT_START = None
 
@@ -115,9 +119,13 @@ OG_SEASONS = SEASONS
 OG_SEASON_COVER_URL = "https://media.discordapp.net/attachments/1423792767238410301/1423804806199509093/de-fnfigment-37-00-c1s6-egs-launcher-keyart-carousel-pdp-2560x1440-logo-2560x1440-bda8f6afb9a5.png?ex=6908894e&is=690737ce&hm=6a10c941315927fcaf057a595d160a90849b49f42b4c95d4617a3d7cf6cf27da&=&format=webp&quality=lossless&width=605&height=340"
 OG_SEASON_COLOR = 0x7A02B2
 OG_SEASON_GRADIENT = [0x7A02B2, 0x52018A]
-OG_SEASON_START = datetime(day=2, month=10, year=2025, hour=11, minute=0, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_START = datetime(
+    day=2, month=10, year=2025, hour=11, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+)
 OG_SEASON_START_OFFSET = timedelta(hours=0)
-OG_SEASON_END = datetime(day=11, month=12, year=2025, hour=8, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
+OG_SEASON_END = datetime(
+    day=11, month=12, year=2025, hour=8, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+)
 
 OG_EVENT_START = None
 
@@ -143,9 +151,13 @@ FESTIVAL_ARTISTS = {
 FESTIVAL_SEASON_COVER_URL = "https://media.discordapp.net/attachments/1423792767238410301/1434356215118434414/cdn-uploader-DE_FNSP_37-50_S11MusicPass_KeyArt_DiscoverPlaylistTile_-1920x1080-18e19bbe.png?ex=6908b092&is=69075f12&hm=cd66658ec5d9b0b16e98d25357aad24f0c080e982200db970fa8e5513b0501f1&=&format=webp&quality=lossless&width=2112&height=1188"
 FESTIVAL_SEASON_COLOR = 0xF7FB6F
 FESTIVAL_SEASON_GRADIENT = [0xF7FB6F, 0xF7FB6F]
-FESTIVAL_SEASON_START = datetime(day=9, month=10, year=2025, hour=11, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
+FESTIVAL_SEASON_START = datetime(
+    day=9, month=10, year=2025, hour=11, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+)
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
-FESTIVAL_SEASON_END = datetime(day=29, month=11, year=2025, hour=7, minute=30, tzinfo=ZoneInfo("Europe/Berlin"))
+FESTIVAL_SEASON_END = datetime(
+    day=30, month=11, year=2025, hour=3, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+)
 
 FESTIVAL_EVENT_START = None
 
@@ -158,9 +170,7 @@ LEGO_PASSES = {
     5: "Goldrausch-Galerie",
 }
 
-LEGO_SEASON_COVER_URL = (
-    "https://cdn2.unrealengine.com/fortnite-rebel-oro-lego-style-thumbnail-576x576-768a2b70edd5.jpg?resize=1&w=2560"
-)
+LEGO_SEASON_COVER_URL = "https://cdn2.unrealengine.com/fortnite-rebel-oro-lego-style-thumbnail-576x576-768a2b70edd5.jpg?resize=1&w=2560"
 LEGO_SEASON_COLOR = 0xED8109
 LEGO_SEASON_GRADIENT = [0x321B0E, 0xAD2223]
 LEGO_SEASON_START = datetime(day=11, month=3, year=2025, hour=10, minute=0, tzinfo=UTC)
