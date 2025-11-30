@@ -54,7 +54,7 @@ def get_fortnite_api_icon_link():
 ############# Battle Royale #############
 #########################################
 
-SEASON = 38
+SEASON = 39
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
@@ -94,17 +94,18 @@ SEASONS = {
     36: [6, 3],
     37: [6, 4],
     38: "the Simpsons",
+    39: [7, 1],
 }
 
-SEASON_COVER_URL = "https://media.discordapp.net/attachments/1423792767238410301/1434374494130278410/cdn-uploader-FNBR_38-00_C6MS2_BR_DiscoverPlaylistTile_-1920x1080-68ccc1fb.png?ex=6908c198&is=69077018&hm=6450453575b4ce3d535648cfbf3ce8df2d900f2e3f4330279f994c52e8ec8a2f&=&format=webp&quality=lossless&width=2112&height=1188"
-SEASON_COLOR = 0xFDC200
-SEASON_GRADIENT = [0xFDC200, 0xE55421]
+SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_38-00_C6MS2_EGS_Launcher_FN_KeyArt_Blade_1200x1600_1200x1600-6aea04d4241e11f924c91cbe18c42203"
+SEASON_COLOR = 0xFFD51C
+SEASON_GRADIENT = [0xFFD51C, 0x091621]
 SEASON_START = datetime(
-    day=1, month=11, year=2025, hour=1, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+    day=30, month=11, year=2025, hour=2, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 SEASON_START_OFFSET = timedelta(hours=0)
 SEASON_END = datetime(
-    day=30, month=11, year=2025, hour=3, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+    day=5, month=3, year=2026, hour=7, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 
 EVENT_START = None
@@ -133,7 +134,7 @@ OG_EVENT_START = None
 ############### Festival ###############
 ########################################
 
-FESTIVAL_SEASON = 11
+FESTIVAL_SEASON = 12
 FESTIVAL_ARTISTS = {
     1: "The Weeknd",
     2: "Lady Gaga",
@@ -146,17 +147,18 @@ FESTIVAL_ARTISTS = {
     9: "Bruno Mars",
     10: "Gorillaz",
     11: "Mixtape",
+    12: "LISA",
 }
 
-FESTIVAL_SEASON_COVER_URL = "https://media.discordapp.net/attachments/1423792767238410301/1434356215118434414/cdn-uploader-DE_FNSP_37-50_S11MusicPass_KeyArt_DiscoverPlaylistTile_-1920x1080-18e19bbe.png?ex=6908b092&is=69075f12&hm=cd66658ec5d9b0b16e98d25357aad24f0c080e982200db970fa8e5513b0501f1&=&format=webp&quality=lossless&width=2112&height=1188"
+FESTIVAL_SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNSP_39-00_ChimeCurl_EGS_Blades_1200x1600_1200x1600-8d852a4faeadf20bf5361773c9c6c9ba"
 FESTIVAL_SEASON_COLOR = 0xF7FB6F
 FESTIVAL_SEASON_GRADIENT = [0xF7FB6F, 0xF7FB6F]
 FESTIVAL_SEASON_START = datetime(
-    day=9, month=10, year=2025, hour=11, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+    day=30, month=11, year=2025, hour=2, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
 FESTIVAL_SEASON_END = datetime(
-    day=30, month=11, year=2025, hour=3, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+    day=6, month=2, year=2026, hour=7, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 
 FESTIVAL_EVENT_START = None
