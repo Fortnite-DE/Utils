@@ -97,7 +97,7 @@ SEASONS = {
     39: [7, 1],
 }
 
-SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_38-00_C6MS2_EGS_Launcher_FN_KeyArt_Blade_1200x1600_1200x1600-6aea04d4241e11f924c91cbe18c42203"
+SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_39-00_C7S1_EGS_Launcher_DarkVoyager_FN_Blade_1200x1600_1200x1600-127107447c05fa1fae4e2e8ba30fa258"
 SEASON_COLOR = 0xFFD51C
 SEASON_GRADIENT = [0xFFD51C, 0x091621]
 SEASON_START = datetime(
