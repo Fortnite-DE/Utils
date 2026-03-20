@@ -9,14 +9,11 @@ requires-python = "~=3.11.0"
 dependencies = [
     "async-timeout~=5.0",
     "fortnite-api~=3.0",
-    "fortnitepy",
+    "fortnitepy @ git+https://github.com/Fortnite-DE/fortnitepy.git",
     "pillow~=11.0",
     "pytz~=2025.2",
     "red-discordbot~=3.5.21",
 ]
-
-[tool.uv.sources]
-fortnitepy = { git = "https://github.com/Fortnite-DE/fortnitepy.git", rev = "master" }
 
 [dependency-groups]
 dev = [
