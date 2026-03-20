@@ -54,7 +54,7 @@ def get_fortnite_api_icon_link():
 ############# Battle Royale #############
 #########################################
 
-SEASON = 39
+SEASON = 40
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
@@ -95,17 +95,18 @@ SEASONS = {
     37: [6, 4],
     38: "the Simpsons",
     39: [7, 1],
+    40: [7, 2],
 }
 
-SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_39-00_C7S1_EGS_Launcher_DarkVoyager_FN_Blade_1200x1600_1200x1600-127107447c05fa1fae4e2e8ba30fa258"
-SEASON_COLOR = 0xFFD51C
-SEASON_GRADIENT = [0xFFD51C, 0x091621]
+SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_40-00_C7S2_EGS_Launcher_FN_Blade_1200x1600_1200x1600-da9380cb4935429a8db7f55ed603ead7"
+SEASON_COLOR = 0xE5D7AF
+SEASON_GRADIENT = [0x985A0F, 0x001348]
 SEASON_START = datetime(
-    day=30, month=11, year=2025, hour=2, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+    day=20, month=3, year=2026, hour=12, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 SEASON_START_OFFSET = timedelta(hours=0)
 SEASON_END = datetime(
-    day=5, month=3, year=2026, hour=7, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+    day=6, month=6, year=2026, hour=8, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 
 EVENT_START = None
