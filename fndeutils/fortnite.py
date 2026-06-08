@@ -54,7 +54,7 @@ def get_fortnite_api_icon_link():
 ############# Battle Royale #############
 #########################################
 
-SEASON = 40
+SEASON = 41
 SEASONS = {
     1: [1, 1],
     2: [1, 2],
@@ -96,17 +96,18 @@ SEASONS = {
     38: "the Simpsons",
     39: [7, 1],
     40: [7, 2],
+    41: [7, 3],
 }
 
-SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_40-00_C7S2_EGS_Launcher_FN_Blade_1200x1600_1200x1600-da9380cb4935429a8db7f55ed603ead7"
-SEASON_COLOR = 0xE5D7AF
-SEASON_GRADIENT = [0x985A0F, 0x001348]
+SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNBR_41-00_C7S3_EGS_Launcher_Blade_1200x1600_1200x1600-95bf3eb7070b41cfa898b87732d14d63"
+SEASON_COLOR = 0x360718
+SEASON_GRADIENT = [0x375BAB, 0xFE1D2F]
 SEASON_START = datetime(
-    day=20, month=3, year=2026, hour=12, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+    day=6, month=5, year=2026, hour=12, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 SEASON_START_OFFSET = timedelta(hours=0)
 SEASON_END = datetime(
-    day=6, month=6, year=2026, hour=8, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+    day=20, month=8, year=2026, hour=8, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 
 EVENT_START = None
@@ -115,18 +116,18 @@ EVENT_START = None
 ############## Fortnite OG ##############
 #########################################
 
-OG_SEASON = 6
+OG_SEASON = 8
 OG_SEASONS = SEASONS
 
-OG_SEASON_COVER_URL = "https://media.discordapp.net/attachments/1423792767238410301/1423804806199509093/de-fnfigment-37-00-c1s6-egs-launcher-keyart-carousel-pdp-2560x1440-logo-2560x1440-bda8f6afb9a5.png?ex=6908894e&is=690737ce&hm=6a10c941315927fcaf057a595d160a90849b49f42b4c95d4617a3d7cf6cf27da&=&format=webp&quality=lossless&width=605&height=340"
+OG_SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/EN_FN_OG_C1S8_40-10_EGS_Launcher_KeyArt_Blade_1200x1600_1200x1600-b326a8e7a0a44a72894df10fbcb96ccb"
 OG_SEASON_COLOR = 0x7A02B2
 OG_SEASON_GRADIENT = [0x7A02B2, 0x52018A]
 OG_SEASON_START = datetime(
-    day=2, month=10, year=2025, hour=11, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+    day=1, month=4, year=2026, hour=12, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 OG_SEASON_START_OFFSET = timedelta(hours=0)
 OG_SEASON_END = datetime(
-    day=11, month=12, year=2025, hour=8, minute=30, tzinfo=ZoneInfo("Europe/Berlin")
+    day=24, month=6, year=2026, hour=8, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 
 OG_EVENT_START = None
@@ -135,7 +136,7 @@ OG_EVENT_START = None
 ############### Festival ###############
 ########################################
 
-FESTIVAL_SEASON = 12
+FESTIVAL_SEASON = 14
 FESTIVAL_ARTISTS = {
     1: "The Weeknd",
     2: "Lady Gaga",
@@ -149,17 +150,19 @@ FESTIVAL_ARTISTS = {
     10: "Gorillaz",
     11: "Mixtape",
     12: "LISA",
+    13: "Chappell Roan",
+    14: "Laufey",
 }
 
-FESTIVAL_SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNSP_39-00_ChimeCurl_EGS_Blades_1200x1600_1200x1600-8d852a4faeadf20bf5361773c9c6c9ba"
+FESTIVAL_SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNSP_40-20_IndoorLace_KeyArt_EGS_Launcher_Blade_1200x1600_1200x1600-7a08eb9d039542d3b83361918a6f6e04"
 FESTIVAL_SEASON_COLOR = 0xF7FB6F
 FESTIVAL_SEASON_GRADIENT = [0xF7FB6F, 0xF7FB6F]
 FESTIVAL_SEASON_START = datetime(
-    day=30, month=11, year=2025, hour=2, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+    day=15, month=4, year=2026, hour=12, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
 FESTIVAL_SEASON_END = datetime(
-    day=6, month=2, year=2026, hour=7, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
+    day=29, month=7, year=2026, hour=8, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
 
 FESTIVAL_EVENT_START = None
@@ -168,17 +171,24 @@ FESTIVAL_EVENT_START = None
 ################# LEGO #################
 ########################################
 
-LEGO_SEASON = 5
+LEGO_SEASON = 10
 LEGO_PASSES = {
+    1: "Abenteuer der Rebellen",
+    2: "Tropenschätze",
     5: "Goldrausch-Galerie",
+    6: "Die Erste Ordnung",
+    7: "Supernova Academy",
+    8: "Palmenparadies",
+    9: "Ninjago 1",
+    10: "Ninjago 2",
 }
 
-LEGO_SEASON_COVER_URL = "https://cdn2.unrealengine.com/fortnite-rebel-oro-lego-style-thumbnail-576x576-768a2b70edd5.jpg?resize=1&w=2560"
+LEGO_SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNSP_40-20_IndoorLace_KeyArt_EGS_Launcher_Blade_1200x1600_1200x1600-7a08eb9d039542d3b83361918a6f6e04"
 LEGO_SEASON_COLOR = 0xED8109
 LEGO_SEASON_GRADIENT = [0x321B0E, 0xAD2223]
-LEGO_SEASON_START = datetime(day=11, month=3, year=2025, hour=10, minute=0, tzinfo=UTC)
+LEGO_SEASON_START = datetime(day=16, month=4, year=2026, hour=12, minute=0, tzinfo=UTC)
 LEGO_SEASON_START_OFFSET = timedelta(hours=0)
-LEGO_SEASON_END = datetime(day=2, month=5, year=2025, hour=10, minute=0, tzinfo=UTC)
+LEGO_SEASON_END = datetime(day=2, month=9, year=2026, hour=8, minute=0, tzinfo=UTC)
 
 
 LEGO_EVENT_START = None
