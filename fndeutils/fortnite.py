@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, datetime
 from zoneinfo import ZoneInfo
 
 __all__ = [
@@ -13,7 +13,6 @@ __all__ = [
     "FESTIVAL_SEASON_END",
     "FESTIVAL_SEASON_GRADIENT",
     "FESTIVAL_SEASON_START",
-    "FESTIVAL_SEASON_START_OFFSET",
     "LEGO_EVENT_START",
     "LEGO_PASSES",
     "LEGO_SEASON",
@@ -22,7 +21,6 @@ __all__ = [
     "LEGO_SEASON_END",
     "LEGO_SEASON_GRADIENT",
     "LEGO_SEASON_START",
-    "LEGO_SEASON_START_OFFSET",
     "OG_EVENT_START",
     "OG_SEASON",
     "OG_SEASONS",
@@ -31,7 +29,6 @@ __all__ = [
     "OG_SEASON_END",
     "OG_SEASON_GRADIENT",
     "OG_SEASON_START",
-    "OG_SEASON_START_OFFSET",
     "SEASON",
     "SEASONS",
     "SEASON_COLOR",
@@ -39,7 +36,6 @@ __all__ = [
     "SEASON_END",
     "SEASON_GRADIENT",
     "SEASON_START",
-    "SEASON_START_OFFSET",
     "get_fortnite_api_icon_link",
 ]
 
@@ -105,7 +101,6 @@ SEASON_GRADIENT = [0x375BAB, 0xFE1D2F]
 SEASON_START = datetime(
     day=6, month=5, year=2026, hour=12, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
-SEASON_START_OFFSET = timedelta(hours=0)
 SEASON_END = datetime(
     day=20, month=8, year=2026, hour=8, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
@@ -125,7 +120,6 @@ OG_SEASON_GRADIENT = [0x7A02B2, 0x52018A]
 OG_SEASON_START = datetime(
     day=1, month=4, year=2026, hour=12, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
-OG_SEASON_START_OFFSET = timedelta(hours=0)
 OG_SEASON_END = datetime(
     day=24, month=6, year=2026, hour=8, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
@@ -160,7 +154,6 @@ FESTIVAL_SEASON_GRADIENT = [0xF7FB6F, 0xF7FB6F]
 FESTIVAL_SEASON_START = datetime(
     day=15, month=4, year=2026, hour=12, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
-FESTIVAL_SEASON_START_OFFSET = timedelta(hours=0)
 FESTIVAL_SEASON_END = datetime(
     day=29, month=7, year=2026, hour=8, minute=0, tzinfo=ZoneInfo("Europe/Berlin")
 )
@@ -187,7 +180,6 @@ LEGO_SEASON_COVER_URL = "https://cdn1.epicgames.com/offer/fn/FNSP_40-20_IndoorLa
 LEGO_SEASON_COLOR = 0xED8109
 LEGO_SEASON_GRADIENT = [0x321B0E, 0xAD2223]
 LEGO_SEASON_START = datetime(day=16, month=4, year=2026, hour=12, minute=0, tzinfo=UTC)
-LEGO_SEASON_START_OFFSET = timedelta(hours=0)
 LEGO_SEASON_END = datetime(day=2, month=9, year=2026, hour=8, minute=0, tzinfo=UTC)
 
 
